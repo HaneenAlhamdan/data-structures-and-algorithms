@@ -4,9 +4,35 @@ namespace data_structures_and_algorithms
 {
     class Program
     {
-        static void Main(string[] args)
+       
+    static void originalArray(int[] array)
+    {
+            Console.WriteLine("Original Array: ");
+            foreach (int arr in array)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(arr);
         }
     }
+
+    static void reverseArray(int[] array)
+    {
+            Console.WriteLine("Reversed Array: ");
+            for (int i = 0; i < array.Length ; i++)
+        {
+            int temp = array[i];
+            array[i] = array[array.Length - 1 - i];
+            array[array.Length - 1 - i] = temp;
+                Console.WriteLine(array[i]);
+            }
+            
+        }
+
+    static void Main(string[] args)
+    {
+            int[] arr = new int[] { 89, 2354, 3546, 23, 10, -923, 823, -12 };
+            originalArray(arr);
+            reverseArray(arr);
+       
+    }
+}
 }
