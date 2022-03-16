@@ -17,7 +17,11 @@ namespace data_structures_and_algorithms
     static void reverseArray(int[] array)
     {
             Console.WriteLine("Reversed Array: ");
+
             for (int i = 0; i < array.Length/2 ; i++)
+
+            for (int i = 0; i < array.Length /2; i++)
+
         {
             int temp = array[i];
             array[i] = array[array.Length - 1 - i];
