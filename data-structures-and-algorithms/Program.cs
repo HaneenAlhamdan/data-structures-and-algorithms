@@ -22,16 +22,21 @@ namespace data_structures_and_algorithms
             int temp = array[i];
             array[i] = array[array.Length - 1 - i];
             array[array.Length - 1 - i] = temp;
-                Console.WriteLine(array[i]);
+             //   Console.WriteLine(array[i]);
             }
-            
+            Console.WriteLine(array);
+        }
+
+        static void insertShiftArray(int[] array) 
+        { 
+        
         }
 
     static void Main(string[] args)
     {
             int[] arr = new int[] { 89, 2354, 3546, 23, 10, -923, 823, -12 };
             originalArray(arr);
-            reverseArray(arr);
+          //  reverseArray(arr);
        
     }
 }
