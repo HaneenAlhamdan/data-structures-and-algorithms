@@ -1,47 +1,98 @@
 ﻿using System;
 
+
 namespace data_structures_and_algorithms
 {
-    class Program
+   public class Program
     {
-       
-    static void originalArray(int[] array)
-    {
-            Console.WriteLine("Original Array: ");
-            foreach (int arr in array)
+        public class Node
         {
-            Console.WriteLine(arr);
-        }
-    }
+            public String data;
+            private Node nextNode;
 
-    static void reverseArray(int[] array)
-    {
-            Console.WriteLine("Reversed Array: ");
 
-            for (int i = 0; i < array.Length/2 ; i++)
-
-            for (int i = 0; i < array.Length /2; i++)
-
-        {
-            int temp = array[i];
-            array[i] = array[array.Length - 1 - i];
-            array[array.Length - 1 - i] = temp;
-             //   Console.WriteLine(array[i]);
+            public Node(String data)
+            {
+                this.data = data;
             }
-            Console.WriteLine(array);
+
+            public String getData()
+            {
+                return data;
+            }
+
+            public Node getNext()
+            {
+                return nextNode;
+            }
+
+            public void setNext(Node nextNode)
+            {
+                this.nextNode = nextNode;
+            }
         }
 
-        static void insertShiftArray(int[] array) 
-        { 
-        
+        public class LinkedList
+        {
+            private Node head;
+            private int size = 0;
+
+
+            public void insert(String data)
+            {
+                Node node = new Node(data);
+
+                if (head == null)
+                {
+                    head = node;
+                }
+                else
+                {
+                    Node tempRef = head.getNext();
+                    node.setNext(tempRef);
+                    head.setNext(node);
+                }
+                size++;
+            }
+
+          
+            public bool includes(String data)
+            {
+                Node currentNode = head;
+                while (currentNode.getNext() != null)
+                {
+                    if (currentNode.getData() == data)
+                    {
+                        return true;
+                    }
+                    currentNode = currentNode.getNext();
+                }
+                return false;
+            }
+
+            
+           
+      public String toString()
+            {
+                String linkesListToString = "";
+
+                if (head == null)
+                {
+                    return "Empty LinkedList (*_*)";
+                }
+                else
+                {
+                    Node currentNode = head;
+                    while (currentNode != null)
+                    {
+                        linkesListToString = linkesListToString + "{ " + currentNode.getData() + " } -> ";
+                        currentNode = currentNode.getNext();
+                    }
+                    currentNode = null;
+                }
+                return linkesListToString + "NULL";
+            }
         }
 
-    static void Main(string[] args)
-    {
-            int[] arr = new int[] { 89, 2354, 3546, 23, 10, -923, 823, -12 };
-            originalArray(arr);
-          //  reverseArray(arr);
-       
     }
-}
 }
