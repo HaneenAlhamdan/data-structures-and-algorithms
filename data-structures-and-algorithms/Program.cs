@@ -8,12 +8,12 @@ namespace data_structures_and_algorithms
         static void Main(string[] args)
         {
             Linked_List testLink = new Linked_List();
-            testLink.Insert(10);
-            testLink.Insert(15);
-            testLink.Insert(18);
-            testLink.Insert(20);
+            testLink.Insert(8);
+            testLink.Insert(12);
+            testLink.Insert(17);
+            testLink.Insert(21);
             Console.WriteLine(testLink.To_String());
-            Console.WriteLine(testLink.Include(10));
+            Console.WriteLine(testLink.Include(18));
 
         }
 
