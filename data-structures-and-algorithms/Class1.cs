@@ -4,6 +4,7 @@ using System.Text;
 
 namespace data_structures_and_algorithms
 {
+
     public class Linked_List
     {
         public Node head;
