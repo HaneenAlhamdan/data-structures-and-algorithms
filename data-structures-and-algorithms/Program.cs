@@ -5,7 +5,7 @@ namespace data_structures_and_algorithms
 {
    public class Program
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
             Linked_List testLink = new Linked_List();
             testLink.Insert(8);
