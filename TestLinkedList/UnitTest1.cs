@@ -64,7 +64,7 @@ namespace TestLinkedList
             Linked_List testLink = new Linked_List();
             testLink.Insert(8);
             testLink.Insert(12);
-            testLink.Insert(7);
+            testLink.Insert(17);
             testLink.Insert(21);
             Assert.Equal("[21] -> [17] -> [12] -> [8] -> NULL", testLink.To_String());
         }
