@@ -7,13 +7,17 @@ namespace data_structures_and_algorithms
     {
        public static void Main(string[] args)
         {
-            Linked_List testLink = new Linked_List();
-            testLink.Insert(8);
-            testLink.Insert(12);
-            testLink.Insert(17);
-            testLink.Insert(21);
-            Console.WriteLine(testLink.To_String());
-            Console.WriteLine(testLink.Include(18));
+            Linked_List<int> testLink = new Linked_List<int>();
+            
+            testLink.Append(22);
+            testLink.Append(38);
+            testLink.Add_First(7);
+            testLink.Add_Before(7, 14);
+            testLink.Add_After(7, 3);
+            testLink.Search(14);
+            testLink.Search(15);
+            testLink.Search(1);
+            testLink.To_String();
 
         }
     }
