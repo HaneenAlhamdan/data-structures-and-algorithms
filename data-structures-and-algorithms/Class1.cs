@@ -137,7 +137,7 @@ namespace data_structures_and_algorithms
                     Console.Write("[" + start.Data + "] -> ");
                     start = start.Next;
                 }
-                Console.WriteLine("Null");
+                Console.WriteLine("X");
             }
         }
        
