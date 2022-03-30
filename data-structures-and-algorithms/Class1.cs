@@ -5,10 +5,10 @@ using System.Text;
 namespace data_structures_and_algorithms
 {
 
-    public class Linked_List<T>
+    public class Linked_List<H>
     {
-        Node<T> Head { get; set; }
-        Node<T> Tail { get; set; }
+        Node<H> Head { get; set; }
+        Node<H> Tail { get; set; }
 
         public Linked_List()
         {
@@ -16,16 +16,16 @@ namespace data_structures_and_algorithms
             Tail = null;
         }
         
-        public void Add_Before(T node, T data)
+        public void Add_Before(H node, H data)
         {
             if (Head == null)
             {
-                Head = new Node<T>(data);
+                Head = new Node<H>(data);
             }
-            Node<T> current = Head;
+            Node<H> current = Head;
             if (Head.Data.Equals(node))
             {
-                Node<T> newNode = new Node<T>(data);
+                Node<H> newNode = new Node<H>(data);
                 newNode.Next = current.Next;
                 Head = newNode;
                 newNode.Next = current;
@@ -58,24 +58,24 @@ namespace data_structures_and_algorithms
                 }
                 else
                 {
-                    Node<T> newNode = new Node<T>(data);
+                    Node<H> newNode = new Node<H>(data);
                     newNode.Next = current.Next;
                     current.Next = newNode;
                 }
             }
         }
        
-        public void Add_After(T node, T data)
+        public void Add_After(H node, H data)
         {
             if (Head == null)
             {
-                Head = new Node<T>(data);
+                Head = new Node<H>(data);
             }
 
-            Node<T> current = Head;
+            Node<H> current = Head;
             if (Head.Data.Equals(node))
             {
-                Node<T> newNode = new Node<T>(data);
+                Node<H> newNode = new Node<H>(data);
                 newNode.Next = current.Next;
                 current.Next = newNode;
             }
@@ -99,16 +99,16 @@ namespace data_structures_and_algorithms
                 }
                 else
                 {
-                    Node<T> newNode = new Node<T>(data);
+                    Node<H> newNode = new Node<H>(data);
                     newNode.Next = current.Next;
                     current.Next = newNode;
                 }
             }
         }
        
-        public void Append(T value)
+        public void Append(H value)
         {
-            Node<T> item = new Node<T>(value);
+            Node<H> item = new Node<H>(value);
 
             if (Head == null)
             {
@@ -124,7 +124,7 @@ namespace data_structures_and_algorithms
         
         public void To_String()
         {
-            Node<T> start = Head;
+            Node<H> start = Head;
             if (start == null)
             {
                 Console.WriteLine("List is empty");
@@ -141,9 +141,9 @@ namespace data_structures_and_algorithms
             }
         }
        
-        public void Add_First(T value)
+        public void Add_First(H value)
         {
-            Node<T> item = new Node<T>(value);
+            Node<H> item = new Node<H>(value);
 
             if (Head == null)
             {
@@ -157,22 +157,22 @@ namespace data_structures_and_algorithms
             }
         }
         
-        public bool Search(T value)
+        public bool Search(H value)
         {
-            Node<T> current = new Node<T>(value);
+            Node<H> current = new Node<H>(value);
             current = Head;
             while (current != null)
             {
                 if (current.Data.Equals(value))
                 {
-                    Console.WriteLine("Found");
+                    Console.WriteLine("Found "+ value);
                     return true;
                 }
                 current = current.Next;
             }
             if (current == null)
             {
-                Console.WriteLine("Not found");
+                Console.WriteLine("Not found "+ value);
             }
             return false;
         }

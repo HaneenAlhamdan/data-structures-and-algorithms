@@ -8,7 +8,8 @@ namespace data_structures_and_algorithms
        public static void Main(string[] args)
         {
             Linked_List<int> testLink = new Linked_List<int>();
-            
+
+            testLink.To_String();
             testLink.Append(22);
             testLink.Append(38);
             testLink.Add_First(7);
@@ -18,6 +19,7 @@ namespace data_structures_and_algorithms
             testLink.Search(15);
             testLink.Search(1);
             testLink.To_String();
+
 
         }
     }
