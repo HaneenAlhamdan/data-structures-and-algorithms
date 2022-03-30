@@ -131,6 +131,7 @@ namespace data_structures_and_algorithms
             }
             else
             {
+                Console.Write("Head ->");
                 while (start != null)
                 {
                     Console.Write("[" + start.Data + "] -> ");
