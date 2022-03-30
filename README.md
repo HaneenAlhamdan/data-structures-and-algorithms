@@ -6,4 +6,6 @@
 
 ## [array-binary-search](./data-structures-and-algorithms/array-binary-search.md)
 
-## [doubly-linked-list](./data-structures-and-algorithms/doubly-linked-list.md)
+## [linked-list](./data-structures-and-algorithms/linked-list.md)
+
+## [linked-list-insertions](./data-structures-and-algorithms/linked-list-insertions.md)
