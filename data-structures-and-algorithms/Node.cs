@@ -5,7 +5,7 @@ using System.Text;
 namespace data_structures_and_algorithms
 {
    
-        class Node<T>
+      public class Node<T>
         {
             public T data;
             public Node<T> next;
