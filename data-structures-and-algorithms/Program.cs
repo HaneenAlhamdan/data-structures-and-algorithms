@@ -18,7 +18,9 @@ namespace data_structures_and_algorithms
             testLink.Search(14);
             testLink.Search(15);
             testLink.Search(1);
+            testLink.Search(18);
             testLink.To_String();
+            testLink.KthForm(22);
 
 
         }

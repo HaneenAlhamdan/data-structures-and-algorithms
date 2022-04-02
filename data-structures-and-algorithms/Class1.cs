@@ -176,5 +176,55 @@ namespace data_structures_and_algorithms
             }
             return false;
         }
+        public bool KthForm(int value)
+        {
+            if(value<0)
+            {
+                return false;
+            }
+
+            int count = 0;
+            Node<H> prev, current, next;
+            prev = null;
+            current = Head;
+            if(Head==null)
+            {
+                Console.WriteLine("List is empty");
+                return false;
+            }
+            while(current!=null)
+            {
+                next = current.Next;
+                current.Next = prev;
+                prev = current;
+                current = next;
+            }
+            Head = prev;
+            while (!Head.Data.Equals(null))
+            {
+                if (Head.Next == null)
+                {
+                    break;
+                }
+                else
+                {
+                    count++;
+                    Head = Head.Next;
+                }
+                if (count == value)
+                {
+                    Console.WriteLine(Head.Data);
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("List size less than{value}");
+
+                }
+                return false;
+            
+                }
+            }
+        }
     }
-    }
+    
