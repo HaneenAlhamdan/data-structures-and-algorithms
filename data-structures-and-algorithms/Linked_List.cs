@@ -176,7 +176,7 @@ namespace data_structures_and_algorithms
             }
             return false;
         }
-        public bool KthForm( int value)
+        public bool KthForm(int value)
         {
             if(value<0)
             {

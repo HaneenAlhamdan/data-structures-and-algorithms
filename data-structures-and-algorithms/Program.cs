@@ -20,7 +20,7 @@ namespace data_structures_and_algorithms
             testLink.Search(1);
             testLink.Search(18);
             testLink.To_String();
-           // testLink.KthForm(22);
+            testLink.KthForm(0);
 
 
         }
