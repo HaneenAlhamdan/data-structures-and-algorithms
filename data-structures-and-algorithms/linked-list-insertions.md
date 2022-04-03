@@ -1,15 +1,33 @@
+
+## A linked list
+ is a linear data structure, in which the elements are not stored at contiguous memory locations. The elements in a linked list are linked using pointers.
+
+## Advantages Of Linked List:
+* Dynamic data structure
+* No memory wastage
+* Implementation
+* Insertion and Deletion Operations
+
+## Disadvantages Of Linked List:
+* Memory usage
+* Traversal
+* Random Access
+
+
 ## Output
 
 ![Screenshot (204)](https://user-images.githubusercontent.com/98957434/160931471-6d96dbac-d083-40ee-8cc8-cb3d2e0a53f1.png)
 
 ## append
-![Screenshot (205)](https://user-images.githubusercontent.com/98957434/160934089-8843ecb9-300a-490e-b03c-0a9e00f0fc0e.png)
+![Untitled (3)](https://user-images.githubusercontent.com/98957434/161450104-b86960d6-8666-4639-b910-80c771621d5a.jpg)
 
 
 ## insert before
-![Screenshot (206)](https://user-images.githubusercontent.com/98957434/160934151-18b67aae-3583-4859-bca5-e5d3e1db80f9.png)
+![Untitled (1)](https://user-images.githubusercontent.com/98957434/161450060-d8ff3df0-b672-4c1a-9f01-341ad8ebaea0.jpg)
 
 
 ## insert after
-![Screenshot (207)](https://user-images.githubusercontent.com/98957434/160934189-d03f4d72-846e-48d8-a119-7bb398fc15d2.png)
+![Untitled (2)](https://user-images.githubusercontent.com/98957434/161450085-d84dff0e-e6b2-47cf-8dc0-a4b1fb3f03f2.jpg)
 
+## Test
+![Screenshot (209)](https://user-images.githubusercontent.com/98957434/161450136-5b988125-ca29-4528-9b9b-3446b9980036.png)
