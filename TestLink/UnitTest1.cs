@@ -5,107 +5,171 @@ using data_structures_and_algorithms;
 namespace TestLink
 {
 
-    public class UnitTest1
+    public class UnitTest1        
     {
         [Fact]
-        public void Test_Empty_LinkedList()
+        public void CreateEmptyLinkedListTest()
         {
-            data_structures_and_algorithms.Linked_List<int> testLink = new data_structures_and_algorithms.Linked_List<int>();
-            testLink.Add_First(7);
-            Assert.NotNull(testLink);
+            Linked_List testLink = new Linked_List();
+            Assert.Null(testLink.head);
+        }
+        //[Fact]
+        //public void InsertTest()
+        //{
+        //    Linked_List testLink = new Linked_List();
+        //    testLink.Insert(10);
+        //    Node temp = testLink.head;
+        //    Assert.NotNull(testLink.head);
+        //    Assert.Equal(10, temp.data);
+        //}
+        //[Fact]
+        //public void HeadTest()
+        //{
+        //    Linked_List testLink = new Linked_List();
+        //    testLink.Insert(10);
+        //    testLink.Insert(20);
+        //    Node temp = testLink.head;
+        //    Assert.Equal(20, temp.data);
+        //}
+        //[Fact]
+        //public void InsertMultipleNodesTest()
+        //{
+        //    Linked_List testLink = new Linked_List();
+        //    testLink.Insert(9);
+        //    testLink.Insert(34);
+        //    testLink.Insert(56);
+        //    testLink.Insert(95);
+        //    Node temp = testLink.head;
+        //    Assert.Equal(95, temp.data);
+        //}
+        ////[Fact]
+        ////public void IncludesFoundTest()
+        ////{
+        ////    Linked_List testLink = new Linked_List();
+        ////    testLink.Insert(9);
+        ////    testLink.Insert(34);
+        ////    Assert.True(testLink.Includes(34));
+        ////}
+        ////[Fact]
+        ////public void IncludesNotFoundTest()
+        ////{
+        ////    Linked_List testLink = new Linked_List();
+        ////    testLink.Insert(9);
+        ////    testLink.Insert(34);
+        ////    Assert.False(testLink.Includes(100));
+        ////}
+        //[Fact]
+        //public void ValesTest()
+        //{
+        //    Linked_List testLink = new Linked_List();
+        //    testLink.Insert(10);
+        //    testLink.Insert(15);
+        //    testLink.Insert(18);
+        //    testLink.Insert(20);
+        //    Assert.Equal("[20] -> [18] -> [15] -> [10] -> NULL", testLink.To_String());
+        //}
+
+        [Fact]
+        public void Append_Link_Test()
+        {
+            Linked_List testLink = new Linked_List();
+            testLink.Append(777);
+            testLink.Append(100);
+            testLink.Append(15);
+            testLink.Append(20);
+            Assert.Equal("[777] -> [100] -> [15] -> [20] -> NULL", testLink.To_String());
         }
 
         [Fact]
-        public void Add_Node_To_LinkedList()
+        public void Insert_Before_Middle_Test()
         {
-            data_structures_and_algorithms.Linked_List<int> testLink = new data_structures_and_algorithms.Linked_List<int>();
-
-            testLink.Add_First(2);
-
-            Assert.Equal(1, 1);
+            Linked_List testLink = new Linked_List();
+            testLink.Insert(1);
+            testLink.Add_After(1, 2);
+            testLink.Add_After(2, 3);
+            testLink.Add_Before(2, 10);
+            Assert.Equal("[1] -> [10] -> [2] -> [3] -> NULL", testLink.To_String());
         }
 
-        [Theory]
-        [InlineData(new int[] { }, 0)]
-        [InlineData(new int[] { 1 }, 1)]
-        [InlineData(new int[] { 1, 2 }, 2)]
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 5)]
-        public void Add_MultipleNode_sTo_LinkedList(int[] nums, int expected) 
+        [Fact]
+        public void InsertBeforeFirstTest()
         {
-            data_structures_and_algorithms.Linked_List<int> testLink = new data_structures_and_algorithms.Linked_List<int>();
-            int actual = 0;
-
-            for (int i = 0; i < nums.Length; i++)
-            {
-                if (i == nums.Length - 1)
-                    actual = nums[i];
-
-                testLink.Append(nums[i]);
-            }
-
-            Assert.Equal(expected, actual);
+            Linked_List testLink = new Linked_List();
+            testLink.Insert(777);
+            testLink.Add_Before(777, 100);
+            Assert.Equal("[100] -> [777] -> NULL", testLink.To_String());
         }
 
-        [Theory]
-        [InlineData(new int[] { 1 }, 1)]
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 1)]
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 2)]
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 3)]
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 4)]
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 5)]
-        public void Return_Value_LinkedList(int[] nums, int target)
+        [Fact]
+        public void InsertAfterMiddle()
         {
-            data_structures_and_algorithms.Linked_List<int> testLink = new data_structures_and_algorithms.Linked_List<int>();
-
-            foreach (var num in nums)
-                testLink.Add_First(num);
-
-            Assert.True(testLink.Search(target));
+            Linked_List testLink = new Linked_List();
+            testLink.Append(1);
+            testLink.Append(2);
+            testLink.Append(3);
+            testLink.Add_After(2, 99);
+            Assert.Equal("[1] -> [2] -> [99] -> [3] -> NULL", testLink.To_String());
         }
 
-        [Theory]
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 100)]
-        public void Append_To_End_LinkedList(int[] nums, int value)
+        [Fact]
+        public void InsertAfterLast()
         {
-            data_structures_and_algorithms.Linked_List<int> testLink = new data_structures_and_algorithms.Linked_List<int>();
-
-            foreach (var num in nums)
-                testLink.Add_First(num);
-
-            testLink.Append(value);
-
-            Assert.True(testLink.Search(value));
+            Linked_List testLink = new Linked_List();
+            testLink.Append(1);
+            testLink.Append(2);
+            testLink.Append(3);
+            testLink.Add_After(3, 99);
+            Assert.Equal("[1] -> [2] -> [3] -> [99] -> NULL", testLink.To_String());
         }
 
-        [Theory]
-        [InlineData(new int[] { 3 }, 3, 1)] 
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 3, 5)]
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 5, 5)]
-        public void Add_Before(int[] nums, int index, int data)
+        [Fact]
+        public void GreaterThanLengthTest()
         {
-            data_structures_and_algorithms.Linked_List<int> testLink = new data_structures_and_algorithms.Linked_List<int>();
-            foreach (var num in nums)
-                testLink.Add_First(num);
-
-            testLink.Add_Before(index, data);
-            Assert.True(testLink.Search(data));
+            Linked_List testLink = new Linked_List();
+            testLink.Append(1);
+            testLink.Append(2);
+            testLink.Append(3);
+            Assert.Null(testLink.KthForm(6));
         }
 
-        [Theory]
-        [InlineData(new int[] { 3 }, 3, 1)]
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 3, 5)]
-        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 5, 5)]
-        public void Add_After(int[] nums, int index, int data)
+        [Fact]
+        public void LengthEqualsKTest()
         {
-            data_structures_and_algorithms.Linked_List<int> testLink = new data_structures_and_algorithms.Linked_List<int>();
-            foreach (var num in nums)
-                testLink.Add_First(num);
-
-            testLink.Add_After(index, data);
-            Assert.True(testLink.Search(data));
+            Linked_List testLink = new Linked_List();
+            testLink.Append(1);
+            testLink.Append(2);
+            Assert.Equal(1, testLink.KthForm(1));
         }
 
+        [Fact]
+        public void NegativeKValue()
+        {
+            Linked_List testLink = new Linked_List();
+            testLink.Append(1);
+            testLink.Append(2);
+            testLink.Append(3);
+            Assert.Null(testLink.KthForm(-3));
+        }
 
+        [Fact]
+        public void SizeOfOneTest()
+        {
+            Linked_List testLink = new Linked_List();
+            testLink.Append(1);
+            Assert.Equal(1, testLink.KthForm(0));
+        }
+
+        [Fact]
+        public void MiddleKTest()
+        {
+            Linked_List testLink = new Linked_List();
+            testLink.Append(1);
+            testLink.Append(2);
+            testLink.Append(3);
+            testLink.Append(4);
+            testLink.Append(5);
+            Assert.Equal(3, testLink.KthForm(2));
+        }
 
     }
 
