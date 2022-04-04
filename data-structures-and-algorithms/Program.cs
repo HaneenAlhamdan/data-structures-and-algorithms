@@ -8,33 +8,37 @@ namespace data_structures_and_algorithms
        public static void Main(string[] args)
         {
             Linked_List testLink = new Linked_List();
+          //  Console.WriteLine("haneen");
 
-         
 
          //int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
          //   Console.WriteLine(Search.Search(arr, 4));
-            //testLink.To_String();
-            //testLink.Append(777);
-            //testLink.Insert(10);
-            //testLink.Add_After(10, 15);
-            //testLink.Add_Before(777, 123);
-            //testLink.Add_After(123, 999);
-            //testLink.Append(100);
-            //testLink.Add_After(123, 76);
-            //testLink.Append(101010);
-            //testLink.DeleteNode(999);
-            //Console.WriteLine(testLink.To_String());
-            //Console.WriteLine($"Counter: {testLink.GetCounter()}");
-            //Console.WriteLine($"Includes 76? {testLink.Includes(76)}.");
-           
+         
+         testLink.Append(14);
+         testLink.Insert(28);
+            Console.WriteLine(testLink.To_String());
+
+         testLink.Add_After(14, 7);
+         testLink.Add_Before(28, 50);
+            Console.WriteLine(testLink.To_String());
+
+         testLink.Add_After(50, 9);
+         testLink.Append(42);
+            Console.WriteLine(testLink.To_String());
+
+         testLink.Add_After(123, 1);
+         testLink.DeleteNode(7);
+         Console.WriteLine(testLink.To_String());
+         Console.WriteLine($"\nIs it Include 76?  {testLink.Includes(76)}");
+         Console.WriteLine($"Is it Include 50?  {testLink.Includes(50)}");
 
 
-            //testLink.Append(1);
             Console.WriteLine(testLink.KthForm(0));
-            //Console.WriteLine(testLink.KthForm(4));
-            //Console.WriteLine(testLink.KthForm(2));
-            //Console.WriteLine(testLink.KthForm(23));
-            //Console.WriteLine(testLink.KthForm(-5));
+            Console.WriteLine(testLink.KthForm(4));
+            Console.WriteLine(testLink.KthForm(2));
+            Console.WriteLine(testLink.KthForm(23));
+            Console.WriteLine(testLink.KthForm(-5));
+           
 
 
         }

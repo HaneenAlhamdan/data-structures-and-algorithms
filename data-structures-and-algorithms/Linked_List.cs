@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace data_structures_and_algorithms
 {
 
-  
+
     public class Linked_List
     {
         public Node head;
@@ -22,7 +22,7 @@ namespace data_structures_and_algorithms
             {
                 if (k > counter || k < 0)
                 {
-                    throw new Exception("Exception: k is greater than the length of the linked list or less than zero, returned ");
+                    throw new Exception(k+" out of the range");
                 }
                 else
                 {
@@ -31,7 +31,9 @@ namespace data_structures_and_algorithms
                     {
                         temp = temp.next;
                     }
+                    //  throw new Exception( "The index for "+k +" is: "+ temp.data);
                     return temp.data;
+
                 }
             }
             catch (Exception e)
@@ -93,7 +95,7 @@ namespace data_structures_and_algorithms
             }
             else
             {
-                Console.WriteLine("Can't Insert!");
+                Console.WriteLine("It can't Insert!");
             }
         }
         public void Add_After(int oldValue, int newValue)
@@ -122,7 +124,7 @@ namespace data_structures_and_algorithms
             }
             else
             {
-                Console.WriteLine("Can't Insert!");
+                Console.WriteLine("It can't Insert!");
             }
         }
         public void DeleteNode(int data)
@@ -150,7 +152,7 @@ namespace data_structures_and_algorithms
             }
             else
             {
-                Console.WriteLine("You can't delete a value that doesn't exist!");
+                Console.WriteLine("You can't ,it not exist!");
             }
         }
         public void Insert(int data)
@@ -202,4 +204,4 @@ namespace data_structures_and_algorithms
         }
     }
 }
-    
+
