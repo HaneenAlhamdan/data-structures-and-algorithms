@@ -3,26 +3,41 @@ using data_structures_and_algorithms;
 
 namespace data_structures_and_algorithms
 {
-   public class Program
+    class Program
     {
        public static void Main(string[] args)
         {
-            Linked_List<int> testLink = new Linked_List<int>();
+            Linked_List testLink = new Linked_List();
 
-            testLink.To_String();
-            testLink.Append(22);
-            testLink.Append(38);
-            testLink.Add_First(7);
-            testLink.Add_Before(7, 14);
-            testLink.Add_After(7, 3);
-            testLink.Search(14);
-            testLink.Search(15);
-            testLink.Search(1);
-            testLink.Search(18);
-            testLink.To_String();
-            testLink.KthForm(0);
+         
+
+         //int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+         //   Console.WriteLine(Search.Search(arr, 4));
+            //testLink.To_String();
+            //testLink.Append(777);
+            //testLink.Insert(10);
+            //testLink.Add_After(10, 15);
+            //testLink.Add_Before(777, 123);
+            //testLink.Add_After(123, 999);
+            //testLink.Append(100);
+            //testLink.Add_After(123, 76);
+            //testLink.Append(101010);
+            //testLink.DeleteNode(999);
+            //Console.WriteLine(testLink.To_String());
+            //Console.WriteLine($"Counter: {testLink.GetCounter()}");
+            //Console.WriteLine($"Includes 76? {testLink.Includes(76)}.");
+           
+
+
+            //testLink.Append(1);
+            Console.WriteLine(testLink.KthForm(0));
+            //Console.WriteLine(testLink.KthForm(4));
+            //Console.WriteLine(testLink.KthForm(2));
+            //Console.WriteLine(testLink.KthForm(23));
+            //Console.WriteLine(testLink.KthForm(-5));
 
 
         }
-    }
 }
+    }
+

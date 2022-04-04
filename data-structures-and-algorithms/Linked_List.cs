@@ -1,230 +1,205 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace data_structures_and_algorithms
 {
 
-    public class Linked_List<H>
+  
+    public class Linked_List
     {
-        Node<H> Head { get; set; }
-        Node<H> Tail { get; set; }
-
-        public Linked_List()
+        public Node head;
+        public static int counter = 0;
+        public int GetCounter()
         {
-            Head = null;
-            Tail = null;
+            return counter;
         }
-        
-        public void Add_Before(H node, H data)
+        public int? KthForm(int k)
         {
-            if (Head == null)
+            try
             {
-                Head = new Node<H>(data);
-            }
-            Node<H> current = Head;
-            if (Head.Data.Equals(node))
-            {
-                Node<H> newNode = new Node<H>(data);
-                newNode.Next = current.Next;
-                Head = newNode;
-                newNode.Next = current;
-            }
-            else if (Head.next == null)
-            {
-                Console.WriteLine("Add Before node not exsist");
-            }
-            else
-            {
-                while (!current.Next.Data.Equals(node))
+                if (k > counter || k < 0)
                 {
-                    if (current.Next == null)
-                    {
-                        Console.WriteLine("Node not exsist");
-                        break;
-                    }
-                    else
-                    {
-                        current = current.Next;
-                        if (current.Next == null)
-                        {
-                            break;
-                        }
-                    }
-                }
-                if (current.Next == null)
-                {
-                    Console.WriteLine("Add Before node not exsist");
+                    throw new Exception("Exception: k is greater than the length of the linked list or less than zero, returned ");
                 }
                 else
                 {
-                    Node<H> newNode = new Node<H>(data);
-                    newNode.Next = current.Next;
-                    current.Next = newNode;
+                    Node temp = head;
+                    for (int i = 1; i < counter - k; i++)
+                    {
+                        temp = temp.next;
+                    }
+                    return temp.data;
                 }
             }
-        }
-       
-        public void Add_After(H node, H data)
-        {
-            if (Head == null)
+            catch (Exception e)
             {
-                Head = new Node<H>(data);
+                Console.Write(e.Message);
+                return null;
             }
+        }
 
-            Node<H> current = Head;
-            if (Head.Data.Equals(node))
+        public void Append(int data)
+        {
+            if (head == null)
             {
-                Node<H> newNode = new Node<H>(data);
-                newNode.Next = current.Next;
-                current.Next = newNode;
+                Node newNode = new Node(data);
+                newNode.next = head;
+                head = newNode;
             }
             else
             {
-                while (!current.Data.Equals(node))
+                Node temp = head;
+                while (temp.next != null)
                 {
-                    if (current.Next == null)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        current = current.Next;
-                    }
+                    temp = temp.next;
                 }
-
-                if (current.Next == null)
+                Node newNode = new Node(data);
+                temp.next = newNode;
+            }
+        }
+        public void Add_Before(int oldValue, int newValue)
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Linked list is empty!");
+            }
+            else if (Includes(oldValue))
+            {
+                Node temp = head;
+                Node node = new Node(newValue);
+                if (temp.next == null)
                 {
-                    Console.WriteLine("Add After node not exsist");
+                    node.next = temp;
+                    head = node;
+                }
+                else if (temp.data == oldValue)
+                {
+                    node.next = temp;
+                    head = node;
                 }
                 else
                 {
-                    Node<H> newNode = new Node<H>(data);
-                    newNode.Next = current.Next;
-                    current.Next = newNode;
+                    while (temp.next.data != oldValue)
+                    {
+                        temp = temp.next;
+                    }
+
+                    node.next = temp.next;
+                    temp.next = node;
                 }
             }
-        }
-       
-        public void Append(H value)
-        {
-            Node<H> item = new Node<H>(value);
-
-            if (Head == null)
-            {
-                Head = item;
-                Tail = item;
-            }
             else
             {
-                Tail.Next = item;
-                Tail = item;
+                Console.WriteLine("Can't Insert!");
             }
         }
-        
-        public void To_String()
+        public void Add_After(int oldValue, int newValue)
         {
-            Node<H> start = Head;
-            if (start == null)
+            if (head == null)
             {
-                Console.WriteLine("List is empty");
+                Console.WriteLine("Linked list is empty!");
             }
-            else
+            else if (Includes(oldValue))
             {
-                Console.Write("Head ->");
-                while (start != null)
+                Node temp = head;
+                while (temp.data != oldValue)
                 {
-                    Console.Write("[" + start.Data + "] -> ");
-                    start = start.Next;
+                    temp = temp.next;
                 }
-                Console.WriteLine("X");
-            }
-        }
-       
-        public void Add_First(H value)
-        {
-            Node<H> item = new Node<H>(value);
-
-            if (Head == null)
-            {
-                Head = item;
-                Tail = item;
+                Node newNode = new Node(newValue);
+                if (temp.next != null)
+                {
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                }
+                else
+                {
+                    temp.next = newNode;
+                }
             }
             else
             {
-                item.Next = Head;
-                Head = item;
+                Console.WriteLine("Can't Insert!");
             }
         }
-        
-        public bool Search(H value)
+        public void DeleteNode(int data)
         {
-            Node<H> current = new Node<H>(value);
-            current = Head;
-            while (current != null)
+            if (Includes(data))
             {
-                if (current.Data.Equals(value))
+                counter--;
+                Node temp = head;
+                Node prev = null;
+                if (temp != null && temp.data == data)
                 {
-                    Console.WriteLine("Found "+ value);
+                    head = temp.next;
+                    return;
+                }
+                while (temp != null && temp.data != data)
+                {
+                    prev = temp;
+                    temp = temp.next;
+                }
+                if (temp == null)
+                {
+                    return;
+                }
+                prev.next = temp.next;
+            }
+            else
+            {
+                Console.WriteLine("You can't delete a value that doesn't exist!");
+            }
+        }
+        public void Insert(int data)
+        {
+            Node newNode = new Node(data);
+            newNode.next = head;
+            head = newNode;
+        }
+
+        public bool Includes(int data)
+        {
+            Node temp = head;
+            while (temp != null)
+            {
+                if (temp.data == data)
+                {
                     return true;
                 }
-                current = current.Next;
-            }
-            if (current == null)
-            {
-                Console.WriteLine("Not found "+ value);
+                temp = temp.next;
             }
             return false;
         }
-        public bool KthForm(int value)
+
+        public string To_String()
         {
-            if(value<0)
+            string outPut = "";
+            Node temp = head;
+            while (temp != null)
             {
-                return false;
+                outPut += $"[{temp.data}] -> ";
+                temp = temp.next;
             }
+            outPut += "NULL";
+            return outPut;
+        }
 
-            int count = 0;
-            Node<H> prev, current, next;
-            prev = null;
-            current = Head;
-            if(Head==null)
-            {
-                Console.WriteLine("List is empty");
-                return false;
-            }
-            while(current!=null)
-            {
-                next = current.Next;
-                current.Next = prev;
-                prev = current;
-                current = next;
-            }
-            Head = prev;
-            while (!Head.Data.Equals(null))
-            {
-                if (Head.Next == null)
-                {
-                    break;
-                }
-                else
-                {
-                    count++;
-                    Head = Head.Next;
-                }
-                if (count == value)
-                {
-                    Console.WriteLine(Head.Data);
-                    return true;
-                }
-                else
-                {
-                    Console.WriteLine("List size less than{value}");
 
-                }
-                return false;
-            
-                }
-            }
+    }
+    public class Node
+    {
+        public int data;
+        public Node next;
+
+        public Node(int data)
+        {
+            Linked_List.counter++;
+            this.data = data;
+            next = null;
         }
     }
+}
     
