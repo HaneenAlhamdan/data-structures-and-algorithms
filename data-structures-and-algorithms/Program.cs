@@ -38,7 +38,22 @@ namespace data_structures_and_algorithms
             Console.WriteLine(testLink.KthForm(2));
             Console.WriteLine(testLink.KthForm(23));
             Console.WriteLine(testLink.KthForm(-5));
-           
+
+
+
+            Linked_List list1 = new Linked_List();  
+            list1.Append(10);
+            list1.Append(20);
+            list1.Append(30);
+            Linked_List list2 = new Linked_List(); 
+            list2.Append(40);
+            list2.Append(50);
+            list2.Append(60);
+            Console.WriteLine("List One :- " + list1.To_String());
+            Console.WriteLine("List Two :- " + list2.To_String());   
+            Linked_List.list_zip(list1, list2);       
+            Console.WriteLine("Zip two linked lists :- " + list1.To_String());    
+
 
 
         }
