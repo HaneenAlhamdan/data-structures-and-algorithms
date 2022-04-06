@@ -173,6 +173,62 @@ namespace TestLink
             Assert.Equal(3, testLink.KthForm(2));
         }
 
-    }
+        [Fact]
+        public void NullListsTest()
+        {
+            Linked_List list1 = new Linked_List();
+            Linked_List list2 = new Linked_List();
+            Assert.Null(Linked_List.list_zip(list1, list2).head);
+        }
 
+        [Fact]
+        public void FirstListIsNullTest()
+        {
+            Linked_List list1 = new Linked_List();
+            Linked_List list2 = new Linked_List();
+            list2.Append(10);
+            list2.Append(20);
+            list2.Append(30);
+            Assert.Equal("[10] -> [20] -> [30] -> NULL", Linked_List.list_zip(list1, list2).To_String());
+        }
+
+        [Fact]
+        public void SecondListIsNullTest()
+        {
+            Linked_List list1 = new Linked_List();
+            Linked_List list2 = new Linked_List();
+            list1.Append(10);
+            list1.Append(20);
+            list1.Append(30);
+            Assert.Equal("[10] -> [20] -> [30] -> NULL", Linked_List.list_zip(list1, list2).To_String());
+        }
+
+        [Fact]
+        public void FirstListLonger()
+        {
+            Linked_List list1 = new Linked_List();
+            Linked_List list2 = new Linked_List();
+            list1.Append(10);
+            list1.Append(20);
+            list1.Append(30);
+            list1.Append(40);
+            list2.Append(50);
+            list2.Append(60);
+            Assert.Equal("[10] -> [50] -> [20] -> [60] -> [30] -> [40] -> NULL", Linked_List.list_zip(list1, list2).To_String());
+        }
+
+        [Fact]
+        public void SecondListLonger()
+        {
+            Linked_List list1 = new Linked_List();
+            Linked_List list2 = new Linked_List();
+            list1.Append(1);
+            list1.Append(2);
+            list2.Append(3);
+            list2.Append(4);
+            list2.Append(5);
+            list2.Append(6);
+            Assert.Equal("[1] -> [3] -> [2] -> [4] -> [5] -> [6] -> NULL", Linked_List.list_zip(list1, list2).To_String());
+        }
+    }
 }
