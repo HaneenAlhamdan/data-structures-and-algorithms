@@ -12,4 +12,4 @@
 
 ## [linked-list-kth](./data-structures-and-algorithms/%20linked-list-kth.md)
 
-
+## [linked-list-zip](./data-structures-and-algorithms/linked-list-zip.md)
