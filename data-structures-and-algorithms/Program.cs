@@ -42,6 +42,7 @@ namespace data_structures_and_algorithms
 
 
 
+
            // Linked_List list1 = new Linked_List();  
            // list1.Append(10);
             //list1.Append(20);
@@ -72,6 +73,7 @@ namespace data_structures_and_algorithms
             Console.WriteLine(newQueue.IsEmpty()); 
             newQueue.Dequeue(); 
             newQueue.Peek(); 
+
 
 
 
