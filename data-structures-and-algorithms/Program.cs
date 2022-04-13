@@ -72,9 +72,9 @@ namespace data_structures_and_algorithms
             newQueue.Enqueue(4);
             Console.WriteLine(newQueue.IsEmpty()); 
             newQueue.Dequeue(); 
-            newQueue.Peek(); 
+            newQueue.Peek();
 
-
+            Console.WriteLine("Haneen");
 
 
         }
