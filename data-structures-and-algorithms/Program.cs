@@ -1,5 +1,6 @@
 ﻿using System;
 using data_structures_and_algorithms;
+using data_structures_and_algorithms.Stacks_and_Queues;
 
 namespace data_structures_and_algorithms
 {
@@ -7,7 +8,7 @@ namespace data_structures_and_algorithms
     {
        public static void Main(string[] args)
         {
-            Linked_List testLink = new Linked_List();
+           // Linked_List testLink = new Linked_List();
           //  Console.WriteLine("haneen");
 
 
@@ -41,19 +42,39 @@ namespace data_structures_and_algorithms
 
 
 
-            Linked_List list1 = new Linked_List();  
-            list1.Append(10);
-            list1.Append(20);
-            list1.Append(30);
-            Linked_List list2 = new Linked_List(); 
-            list2.Append(40);
-            list2.Append(50);
-            list2.Append(60);
-            Console.WriteLine("List One :- " + list1.To_String());
-            Console.WriteLine("List Two :- " + list2.To_String());   
-            Linked_List.list_zip(list1, list2);       
-            Console.WriteLine("Merge two linked lists :- " + list1.To_String());    
 
+           // Linked_List list1 = new Linked_List();  
+           // list1.Append(10);
+            //list1.Append(20);
+            //list1.Append(30);
+           // Linked_List list2 = new Linked_List(); 
+            //list2.Append(40);
+            //list2.Append(50);
+            //list2.Append(60);
+            //Console.WriteLine("List One :- " + list1.To_String());
+            //Console.WriteLine("List Two :- " + list2.To_String());   
+            //Linked_List.list_zip(list1, list2);       
+            //Console.WriteLine("Zip two linked lists :- " + list1.To_String());
+
+
+            Stack newStack = new Stack();
+            newStack.Peek();
+            newStack.Push(2);
+            newStack.Push(4);
+            Console.WriteLine(newStack.IsEmpty()); 
+            newStack.Pop();
+            newStack.Peek(); 
+
+            Console.WriteLine("\n \n");
+            Queue newQueue = new Queue();
+            newQueue.Peek();
+            newQueue.Enqueue(2);
+            newQueue.Enqueue(4);
+            Console.WriteLine(newQueue.IsEmpty()); 
+            newQueue.Dequeue(); 
+            newQueue.Peek();
+
+            Console.WriteLine("Haneen");
 
 
         }

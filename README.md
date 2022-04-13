@@ -15,3 +15,5 @@
 ## [linked-list-zip](./data-structures-and-algorithms/linked-list-zip.md)
 
 ## [stack-and-queue](./data-structures-and-algorithms/stack-and-queue.md)
+
+## [stack-queue-pseudo](./data-structures-and-algorithms/stack-queue-pseudo.md)

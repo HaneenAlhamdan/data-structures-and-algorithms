@@ -24,3 +24,17 @@ is a linear data structure. It is an ordered list that follows the principle FIF
 * dequeue
 * peek
 * isEmpty
+
+## API
+Stack methods:
+1. Push: takes a value as an argument and adds a new node with that value to the top of the stack with an O(1) Time performance.
+2. Pop: removes the node and returns the node's value from the top of the stack.
+3. Peek: returns value of the node located at the top of the stack.
+4. IsEmpty: returns a boolean indicating whether or not the stack is empty.
+
+Queue methods:
+
+1. Enqueue: adds a new node with that value to the back of the queue with an O(1) Time performance.
+2. Dequeue Returns: the value from node from the front of the queue.
+3. Peek: returns value of the node located at the front of the queue.
+4. IsEmpty returns a boolean indicating whether or not the queue is empty.
