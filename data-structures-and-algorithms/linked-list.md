@@ -19,3 +19,6 @@ contain nodes which have a data part and an address part, i.e., Next, which poin
 * Includes(int data) method that loops through the linked list using a temp pointer to search for a searched data and returns true if it's found, otherwise it returns false. The condition of this loop is to keep iterating until the pointer reaches to null.
 
 * LinkedListToString() method that returns the data of each node as a formatted string after it concatenates them inside a string using a while loop to traverse the whole linked list.
+
+
+## finaly
