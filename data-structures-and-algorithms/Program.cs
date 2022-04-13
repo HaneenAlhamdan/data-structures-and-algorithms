@@ -74,6 +74,8 @@ namespace data_structures_and_algorithms
             newQueue.Peek();
 
             Console.WriteLine("Haneen");
+            Console.WriteLine("Haneen");
+            
 
         }
 }
