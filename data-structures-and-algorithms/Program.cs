@@ -43,6 +43,7 @@ namespace data_structures_and_algorithms
 
 
 
+
            // Linked_List list1 = new Linked_List();  
            // list1.Append(10);
             //list1.Append(20);
@@ -76,6 +77,7 @@ namespace data_structures_and_algorithms
 
 
             Console.WriteLine("\n \n");
+
             stack_queue_pseudo newstack_Queue_Pseudo = new stack_queue_pseudo();
             newstack_Queue_Pseudo.Enqueue(1);
             newstack_Queue_Pseudo.Enqueue(2);
@@ -83,8 +85,6 @@ namespace data_structures_and_algorithms
             Console.WriteLine("Peek is :" + newstack_Queue_Pseudo.Peek());
             newstack_Queue_Pseudo.Dequeue();
             Console.WriteLine("Peek after Dequeue is :" + newstack_Queue_Pseudo.Peek());
-
-
 
 
 

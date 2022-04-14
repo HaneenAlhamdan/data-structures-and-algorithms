@@ -12,4 +12,8 @@
 
 ## [linked-list-kth](./data-structures-and-algorithms/%20linked-list-kth.md)
 
+## [linked-list-zip](./data-structures-and-algorithms/linked-list-zip.md)
 
+## [stack-and-queue](./data-structures-and-algorithms/stack-and-queue.md)
+
+## [stack-queue-pseudo](./data-structures-and-algorithms/stack-queue-pseudo.md)
