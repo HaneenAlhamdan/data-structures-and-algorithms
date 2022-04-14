@@ -1,6 +1,7 @@
 ﻿using System;
 using data_structures_and_algorithms;
 using data_structures_and_algorithms.Stacks_and_Queues;
+using data_structures_and_algorithms.stack_queue_pseudo;
 
 namespace data_structures_and_algorithms
 {
@@ -57,24 +58,35 @@ namespace data_structures_and_algorithms
             //Console.WriteLine("Zip two linked lists :- " + list1.To_String());
 
 
-            Stack newStack = new Stack();
-            newStack.Peek();
-            newStack.Push(2);
-            newStack.Push(4);
-            Console.WriteLine(newStack.IsEmpty()); 
-            newStack.Pop();
-            newStack.Peek(); 
+            //Stack newStack = new Stack();
+            //newStack.Peek();
+            //newStack.Push(2);
+            //newStack.Push(4);
+            //Console.WriteLine(newStack.IsEmpty()); 
+            //newStack.Pop();
+            //newStack.Peek(); 
+
+            //Console.WriteLine("\n \n");
+            //Queue newQueue = new Queue();
+            //newQueue.Peek();
+            //newQueue.Enqueue(2);
+            //newQueue.Enqueue(4);
+            //Console.WriteLine(newQueue.IsEmpty()); 
+            //newQueue.Dequeue(); 
+            //newQueue.Peek();
+
 
             Console.WriteLine("\n \n");
-            Queue newQueue = new Queue();
-            newQueue.Peek();
-            newQueue.Enqueue(2);
-            newQueue.Enqueue(4);
-            Console.WriteLine(newQueue.IsEmpty()); 
-            newQueue.Dequeue(); 
-            newQueue.Peek();
 
-            Console.WriteLine("Haneen");
+            stack_queue_pseudo newstack_Queue_Pseudo = new stack_queue_pseudo();
+            newstack_Queue_Pseudo.Enqueue(1);
+            newstack_Queue_Pseudo.Enqueue(2);
+            newstack_Queue_Pseudo.Enqueue(3);
+            Console.WriteLine("Peek is :" + newstack_Queue_Pseudo.Peek());
+            newstack_Queue_Pseudo.Dequeue();
+            Console.WriteLine("Peek after Dequeue is :" + newstack_Queue_Pseudo.Peek());
+
+
 
 
         }

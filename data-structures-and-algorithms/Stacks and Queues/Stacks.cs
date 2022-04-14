@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using data_structures_and_algorithms.Node;
+using data_structures_and_algorithms.stack_queue_pseudo;
 
 namespace data_structures_and_algorithms.Stacks_and_Queues
 {
