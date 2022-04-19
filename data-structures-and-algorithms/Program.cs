@@ -1,6 +1,11 @@
 ﻿using System;
 using data_structures_and_algorithms;
 using data_structures_and_algorithms.Stacks_and_Queues;
+using data_structures_and_algorithms.stack_queue_pseudo;
+using data_structures_and_algorithms.stack_queue_animal_shelter;
+
+
+
 
 namespace data_structures_and_algorithms
 {
@@ -8,46 +13,46 @@ namespace data_structures_and_algorithms
     {
        public static void Main(string[] args)
         {
-           // Linked_List testLink = new Linked_List();
-          //  Console.WriteLine("haneen");
+            // Linked_List testLink = new Linked_List();
+            //  Console.WriteLine("haneen");
 
 
-         //int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
-         //   Console.WriteLine(Search.Search(arr, 4));
-         
-         //testLink.Append(14);
-         //testLink.Insert(28);
-         //   Console.WriteLine(testLink.To_String());
+            //int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+            //   Console.WriteLine(Search.Search(arr, 4));
 
-         //testLink.Add_After(14, 7);
-         //testLink.Add_Before(28, 50);
-         //   Console.WriteLine(testLink.To_String());
+            //testLink.Append(14);
+            //testLink.Insert(28);
+            //   Console.WriteLine(testLink.To_String());
 
-         //testLink.Add_After(50, 9);
-         //testLink.Append(42);
-         //   Console.WriteLine(testLink.To_String());
+            //testLink.Add_After(14, 7);
+            //testLink.Add_Before(28, 50);
+            //   Console.WriteLine(testLink.To_String());
 
-         //testLink.Add_After(123, 1);
-         //testLink.DeleteNode(7);
-         //Console.WriteLine(testLink.To_String());
-         //Console.WriteLine($"\nIs it Include 76?  {testLink.Includes(76)}");
-         //Console.WriteLine($"Is it Include 50?  {testLink.Includes(50)}");
+            //testLink.Add_After(50, 9);
+            //testLink.Append(42);
+            //   Console.WriteLine(testLink.To_String());
 
-
-         //   Console.WriteLine(testLink.KthForm(0));
-         //   Console.WriteLine(testLink.KthForm(4));
-         //   Console.WriteLine(testLink.KthForm(2));
-         //   Console.WriteLine(testLink.KthForm(23));
-         //   Console.WriteLine(testLink.KthForm(-5));
+            //testLink.Add_After(123, 1);
+            //testLink.DeleteNode(7);
+            //Console.WriteLine(testLink.To_String());
+            //Console.WriteLine($"\nIs it Include 76?  {testLink.Includes(76)}");
+            //Console.WriteLine($"Is it Include 50?  {testLink.Includes(50)}");
 
 
+            //   Console.WriteLine(testLink.KthForm(0));
+            //   Console.WriteLine(testLink.KthForm(4));
+            //   Console.WriteLine(testLink.KthForm(2));
+            //   Console.WriteLine(testLink.KthForm(23));
+            //   Console.WriteLine(testLink.KthForm(-5));
 
 
-           // Linked_List list1 = new Linked_List();  
-           // list1.Append(10);
+
+
+            // Linked_List list1 = new Linked_List();  
+            // list1.Append(10);
             //list1.Append(20);
             //list1.Append(30);
-           // Linked_List list2 = new Linked_List(); 
+            // Linked_List list2 = new Linked_List(); 
             //list2.Append(40);
             //list2.Append(50);
             //list2.Append(60);
@@ -61,20 +66,32 @@ namespace data_structures_and_algorithms
             newStack.Peek();
             newStack.Push(2);
             newStack.Push(4);
-            Console.WriteLine(newStack.IsEmpty()); 
+            Console.WriteLine(newStack.IsEmpty());
             newStack.Pop();
-            newStack.Peek(); 
+            newStack.Peek();
+           // Console.WriteLine(newStack.ToString());
 
             Console.WriteLine("\n \n");
             Queue newQueue = new Queue();
             newQueue.Peek();
             newQueue.Enqueue(2);
             newQueue.Enqueue(4);
-            Console.WriteLine(newQueue.IsEmpty()); 
-            newQueue.Dequeue(); 
+            Console.WriteLine(newQueue.IsEmpty());
+            newQueue.Dequeue();
             newQueue.Peek();
+           // Console.WriteLine(newQueue.ToString());
 
-            Console.WriteLine("Haneen");
+            //Console.WriteLine("\n \n");
+
+            //stack_queue_pseudo newstack_Queue_Pseudo = new stack_queue_pseudo();
+            //newstack_Queue_Pseudo.Enqueue(1);
+            //newstack_Queue_Pseudo.Enqueue(2);
+            //newstack_Queue_Pseudo.Enqueue(3);
+            //Console.WriteLine("Peek is :" + newstack_Queue_Pseudo.Peek());
+            //newstack_Queue_Pseudo.Dequeue();
+            //Console.WriteLine("Peek after Dequeue is :" + newstack_Queue_Pseudo.Peek());
+
+
 
 
         }
