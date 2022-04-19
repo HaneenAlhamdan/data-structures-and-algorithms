@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace data_structures_and_algorithms
+namespace data_structures_and_algorithms.Node
 {
 
 
@@ -227,17 +227,17 @@ namespace data_structures_and_algorithms
 
 
     }
-    public class Node
-    {
-        public int data;
-        public Node next;
+    //public class Node
+    //{
+    //    public int data;
+    //    public Node next;
 
-        public Node(int data)
-        {
-            Linked_List.counter++;
-            this.data = data;
-            next = null;
-        }
-    }
+    //    public Node(int data)
+    //    {
+    //        Linked_List.counter++;
+    //        this.data = data;
+    //        next = null;
+    //    }
+    //}
 }
 
