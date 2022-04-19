@@ -18,4 +18,4 @@
 
 ## [stack-queue-pseudo](./data-structures-and-algorithms/stack-queue-pseudo.md)
 
-## [stack-queue-animal-shelter](./data-structures-and-algorithms/)
+## [stack-queue-animal-shelter](./data-structures-and-algorithms/stack-queue-animal-shelter.md)
