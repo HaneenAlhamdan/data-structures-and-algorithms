@@ -18,5 +18,4 @@
 
 ## [stack-queue-pseudo](./data-structures-and-algorithms/stack-queue-pseudo.md)
 
-## hello
-# haneen
+## [stack-queue-animal-shelter](./data-structures-and-algorithms/)
