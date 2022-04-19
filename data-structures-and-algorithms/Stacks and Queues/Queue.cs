@@ -81,5 +81,26 @@ namespace data_structures_and_algorithms.Stacks_and_Queues
         {
             return front == null;
         }
+
+
+        public string ToString()
+        {
+            string str = "";
+            if (front == null)
+            {
+                return "Queue is empty";
+            }
+            else
+            {
+                Node.Node temp = front;
+                while (temp != null)
+                {
+                    str += "[" + temp.data + "] -> ";
+                    temp = temp.next;
+                }
+            }
+            str += "null";
+            return str;
+        }
     }
 }
