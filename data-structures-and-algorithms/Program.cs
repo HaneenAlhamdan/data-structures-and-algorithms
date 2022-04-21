@@ -3,6 +3,7 @@ using data_structures_and_algorithms;
 using data_structures_and_algorithms.Stacks_and_Queues;
 using data_structures_and_algorithms.stack_queue_pseudo;
 using data_structures_and_algorithms.stack_queue_animal_shelter;
+using data_structures_and_algorithms.stack_queue_brackets;
 
 
 
@@ -11,7 +12,7 @@ namespace data_structures_and_algorithms
 {
     class Program
     {
-       public static void Main(string[] args)
+        public static void Main(string[] args)
         {
             // Linked_List testLink = new Linked_List();
             //  Console.WriteLine("haneen");
@@ -62,24 +63,24 @@ namespace data_structures_and_algorithms
             //Console.WriteLine("Zip two linked lists :- " + list1.To_String());
 
 
-            Stack newStack = new Stack();
-            newStack.Peek();
-            newStack.Push(2);
-            newStack.Push(4);
-            Console.WriteLine(newStack.IsEmpty());
-            newStack.Pop();
-            newStack.Peek();
-           // Console.WriteLine(newStack.ToString());
+            // Stack newStack = new Stack();
+            // newStack.Peek();
+            // newStack.Push(2);
+            // newStack.Push(4);
+            // Console.WriteLine(newStack.IsEmpty());
+            // newStack.Pop();
+            // newStack.Peek();
+            //// Console.WriteLine(newStack.ToString());
 
-            Console.WriteLine("\n \n");
-            Queue newQueue = new Queue();
-            newQueue.Peek();
-            newQueue.Enqueue(2);
-            newQueue.Enqueue(4);
-            Console.WriteLine(newQueue.IsEmpty());
-            newQueue.Dequeue();
-            newQueue.Peek();
-           // Console.WriteLine(newQueue.ToString());
+            // Console.WriteLine("\n \n");
+            // Queue newQueue = new Queue();
+            // newQueue.Peek();
+            // newQueue.Enqueue(2);
+            // newQueue.Enqueue(4);
+            // Console.WriteLine(newQueue.IsEmpty());
+            // newQueue.Dequeue();
+            // newQueue.Peek();
+            // Console.WriteLine(newQueue.ToString());
 
             //Console.WriteLine("\n \n");
 
@@ -92,8 +93,29 @@ namespace data_structures_and_algorithms
             //Console.WriteLine("Peek after Dequeue is :" + newstack_Queue_Pseudo.Peek());
 
 
+            AnimalShelter animalShelter = new AnimalShelter(1, " Happy Shelter");
+            Cat cat1 = new Cat("Milo", 2);
+            Cat cat2 = new Cat("Suger", 4);
+            Dog dog1 = new Dog("Mouna", 5);
+            Cat cat3 = new Cat("Lele", 1);
+            Dog dog2 = new Dog("Katy", 7);
+            animalShelter.Enqueue(cat1);
+            animalShelter.Enqueue(cat2);
+            animalShelter.Enqueue(dog1);
+            animalShelter.Enqueue(cat3);
+            animalShelter.Enqueue(dog2);
+            Animal animal1 = animalShelter.Dequeue("cat");
+            Animal animal2 = animalShelter.Dequeue("dog");
+            Animal animal3 = animalShelter.Dequeue("cat");
+            Console.WriteLine(animal1.Name);
+            Console.WriteLine(animal2.Name);
+            Console.WriteLine(animal3.Name);
 
+            Console.WriteLine("\n \n");
 
+            Console.WriteLine(stack_queue_brackets.stack_queue_brackets.ValidateBrackets("{(})"));
+
+        
         }
 }
     }
