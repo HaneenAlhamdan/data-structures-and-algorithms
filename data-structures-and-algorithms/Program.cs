@@ -1,11 +1,13 @@
 ﻿using System;
 using data_structures_and_algorithms;
-using data_structures_and_algorithms.Stacks_and_Queues;
+//using data_structures_and_algorithms.Stacks_and_Queues;
 using data_structures_and_algorithms.stack_queue_pseudo;
 using data_structures_and_algorithms.stack_queue_animal_shelter;
 using data_structures_and_algorithms.stack_queue_brackets;
 using System.Collections.Generic;
 using System.Collections;
+using data_structures_and_algorithms.Trees;
+
 
 namespace data_structures_and_algorithms
 {
@@ -91,7 +93,7 @@ namespace data_structures_and_algorithms
             //newstack_Queue_Pseudo.Dequeue();
             //Console.WriteLine("Peek after Dequeue is :" + newstack_Queue_Pseudo.Peek());
 
-
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             AnimalShelter animalShelter = new AnimalShelter(1, " Happy Shelter");
             Cat cat1 = new Cat("Milo", 2);
             Cat cat2 = new Cat("Suger", 4);
@@ -111,18 +113,71 @@ namespace data_structures_and_algorithms
             Console.WriteLine(animal3.Name);
 
             Console.WriteLine("\n \n");
-
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             Console.WriteLine(stack_queue_brackets.stack_queue_brackets.ValidateBrackets("{(})"));
 
 
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        }
-       
+            Console.WriteLine("\n \n");
            
-        
-    };
 
+            BinaryTree tree = new BinaryTree();
+            tree.Root = new NodeTree(1);
+            tree.Root.Left = new NodeTree(2);
+            tree.Root.Right = new NodeTree(3);
+            tree.Root.Left.Left = new NodeTree(4);
+            tree.Root.Left.Right = new NodeTree(5);
+
+            Console.WriteLine("\n" + "Pre order: ");
+            int[] arr = tree.PreOrder(tree.Root);
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            tree.list.Clear();
+            Console.WriteLine();
+
+            Console.WriteLine("\n" + "In order: ");
+            int[] arr2 = tree.InOrder(tree.Root);
+
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                Console.Write(arr2[i] + " ");
+            }
+            tree.list.Clear();
+            Console.WriteLine();
+
+            Console.WriteLine("\n"+ "Post order: ");
+            int[] arr3 = tree.PostOrder(tree.Root);
+
+            for (int i = 0; i < arr3.Length; i++)
+            {
+                Console.Write(arr3[i] + " ");
+            }
+            Console.WriteLine();
+
+
+            BinarySearchTree binarySearchTree = new BinarySearchTree();
+            binarySearchTree.Add(16);
+            binarySearchTree.Add(22);
+            binarySearchTree.Add(39);
+            binarySearchTree.Add(20);
+            binarySearchTree.Add(33);
+
+            int[] arr4 = binarySearchTree.PreOrder(binarySearchTree.Root);
+            for (int i = 0; i < arr4.Length; i++)
+            {
+                Console.Write(arr4[i] + " ");
+            }
+            Console.WriteLine("\n");
+            Console.WriteLine(binarySearchTree.Contains(0));
+
+
+        }  
+    }
 }
     
 
