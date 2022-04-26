@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using data_structures_and_algorithms.Stacks_and_Queues;
-using data_structures_and_algorithms.Node;
+//using data_structures_and_algorithms.Stacks_and_Queues;
+//using data_structures_and_algorithms.Node;
 
 
 namespace data_structures_and_algorithms.stack_queue_pseudo
@@ -10,8 +10,8 @@ namespace data_structures_and_algorithms.stack_queue_pseudo
     public class stack_queue_pseudo
     {
 
-        Stack stack1 = new Stack();
-        Stack stack2 = new Stack();
+        //Stack stack1 = new Stack();
+        //Stack stack2 = new Stack();
 
         //public void Enqueue(int x)
         //{
@@ -32,20 +32,20 @@ namespace data_structures_and_algorithms.stack_queue_pseudo
         //    }
         //}
 
-        public object Dequeue()
-        {
+        //public object Dequeue()
+        //{
 
-            if (stack1.IsEmpty() == true)
-            {
-                return "Q is Empty";
+        //    if (stack1.IsEmpty() == true)
+        //    {
+        //        return "Q is Empty";
 
-            }
+        //    }
 
-            return stack1.Pop();
-        }
-        public object Peek()
-        {
-            return stack1.Peek();
-        }
+        //    return stack1.Pop();
+        //}
+        //public object Peek()
+        //{
+        //    return stack1.Peek();
+        //}
     }
 }
