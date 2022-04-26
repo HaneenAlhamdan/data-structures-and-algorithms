@@ -350,9 +350,9 @@ namespace TestLink
         [Fact]
         public void TestEnqueue()
         {
-            AnimalShelter animalShelter = new AnimalShelter(1, "Irbid Shelter");
-            Cat cat1 = new Cat("Lucy", 2);
-            Cat cat2 = new Cat("Meme", 3);
+            AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
+            Cat cat1 = new Cat("Milo", 2);
+            Cat cat2 = new Cat("Suger", 3);
             animalShelter.Enqueue(cat1);
             animalShelter.Enqueue(cat2);
             Assert.Equal(cat1.Name, animalShelter.GetAnimals().Peek().Name);
@@ -361,10 +361,10 @@ namespace TestLink
         [Fact]
         public void TestDequeue()
         {
-            AnimalShelter animalShelter = new AnimalShelter(1, "Irbid Shelter");
-            Cat cat1 = new Cat("Lucy", 2);
-            Cat cat2 = new Cat("Sara", 4);
-            Dog dog1 = new Dog("Rex", 5);
+            AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
+            Cat cat1 = new Cat("Milo", 2);
+            Cat cat2 = new Cat("Suger", 4);
+            Dog dog1 = new Dog("Mouna", 5);
             animalShelter.Enqueue(cat1);
             animalShelter.Enqueue(cat2);
             animalShelter.Enqueue(dog1);
@@ -375,20 +375,20 @@ namespace TestLink
         [Fact]
         public void TestDequeueAnimalNotInShelter()
         {
-            AnimalShelter animalShelter = new AnimalShelter(1, "Irbid Shelter");
-            Cat cat1 = new Cat("Lucy", 2);
-            Cat cat2 = new Cat("Sara", 4);
-            Dog dog1 = new Dog("Rex", 5);
+            AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
+            Cat cat1 = new Cat("Milo", 2);
+            Cat cat2 = new Cat("Suger", 4);
+            Dog dog1 = new Dog("Mouna", 5);
             animalShelter.Enqueue(cat1);
             animalShelter.Enqueue(cat2);
             animalShelter.Enqueue(dog1);
-            Assert.Null(animalShelter.Dequeue("bird"));
+            Assert.Null(animalShelter.Dequeue("Fish"));
         }
 
         [Fact]
         public void TestDequeueEmptyShelter()
         {
-            AnimalShelter animalShelter = new AnimalShelter(1, "Irbid Shelter");
+            AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
             Assert.Null(animalShelter.Dequeue("dog"));
         }
 
