@@ -21,3 +21,5 @@
 ## [stack-queue-animal-shelter](./data-structures-and-algorithms/stack-queue-animal-shelter.md)
 
 ## [stack-queue-brackets](./data-structures-and-algorithms/stack-queue-brackets.md)
+
+## [Trees](./data-structures-and-algorithms/Trees.md)
