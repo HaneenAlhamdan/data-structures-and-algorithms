@@ -4,9 +4,8 @@ using data_structures_and_algorithms.Stacks_and_Queues;
 using data_structures_and_algorithms.stack_queue_pseudo;
 using data_structures_and_algorithms.stack_queue_animal_shelter;
 using data_structures_and_algorithms.stack_queue_brackets;
-
-
-
+using System.Collections.Generic;
+using System.Collections;
 
 namespace data_structures_and_algorithms
 {
@@ -113,10 +112,17 @@ namespace data_structures_and_algorithms
 
             Console.WriteLine("\n \n");
 
+
             Console.WriteLine(stack_queue_brackets.stack_queue_brackets.ValidateBrackets("{(})"));
 
-        
+
+
         }
+       
+           
+        
+    };
+
 }
-    }
+    
 
