@@ -24,3 +24,5 @@
 
 ## [Trees](./data-structures-and-algorithms/Trees.md)
 
+## [Tree-max](./data-structures-and-algorithms/Tree-max.md)
+
