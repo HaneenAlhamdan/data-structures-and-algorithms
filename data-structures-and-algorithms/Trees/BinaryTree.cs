@@ -73,7 +73,7 @@ namespace data_structures_and_algorithms.Trees
 		}
 
 
-		public int FindMax()
+		public int Maximum()
 		{
 			var result = Root.Value;
 			var q = new Queue();
