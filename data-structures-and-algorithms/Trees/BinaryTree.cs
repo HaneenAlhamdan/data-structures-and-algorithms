@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -69,6 +70,39 @@ namespace data_structures_and_algorithms.Trees
 			}
 			list.Add(Root.Value);
 			return list.ToArray();
+		}
+
+
+		public int Maximum()
+		{
+			var result = Root.Value;
+			var q = new Queue();
+			// Add first node of tree
+			q.Enqueue(Root);
+
+			while (q.Count != 0)
+			{
+				NodeTree node = (NodeTree)q.Peek(); // Get new head
+
+				if (node.Left != null)
+				{
+					// Add left child value
+					q.Enqueue(node.Left);
+				}
+				if (node.Right != null)
+				{
+					// Add right child value
+					q.Enqueue(node.Right);
+				}
+				// Check that node value is greater than or not
+				if (node.Value > result)
+				{
+					result = node.Value;
+				}
+				// Remove element of queue
+				q.Dequeue();
+			}
+			return result;
 		}
 	}
 }

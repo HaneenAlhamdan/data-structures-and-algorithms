@@ -1,7 +1,7 @@
 ﻿using System;
 using data_structures_and_algorithms;
 //using data_structures_and_algorithms.Stacks_and_Queues;
-using data_structures_and_algorithms.stack_queue_pseudo;
+//using data_structures_and_algorithms.stack_queue_pseudo;
 using data_structures_and_algorithms.stack_queue_animal_shelter;
 using data_structures_and_algorithms.stack_queue_brackets;
 using System.Collections.Generic;
@@ -174,6 +174,11 @@ namespace data_structures_and_algorithms
             }
             Console.WriteLine("\n");
             Console.WriteLine(binarySearchTree.Contains(0));
+
+
+
+            Console.WriteLine();
+            Console.WriteLine("The Maximum value in Binary Tree is: " + tree.Maximum());
 
 
         }  
