@@ -532,5 +532,32 @@ namespace TestLink
             Assert.Null(binarySearchTree.Root.Left);
             Assert.NotNull(binarySearchTree.Root.Right);
         }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////
+        ///
+
+        [Fact]
+        public void Test_Max_Binary_Tree_One()
+        {
+            BinaryTree tree = new BinaryTree();
+            tree.Root = new NodeTree(1);
+            tree.Root.Left = new NodeTree(2);
+            tree.Root.Right = new NodeTree(13);
+            tree.Root.Left.Left = new NodeTree(4);
+            tree.Root.Left.Right = new NodeTree(5);
+            Assert.Equal(13, tree.FindMax());
+        }
+        [Fact]
+        public void Test_Max_Binary_Tree_Two()
+        {
+            BinaryTree tree = new BinaryTree();
+            tree.Root = new NodeTree(1);
+            tree.Root.Left = new NodeTree(2);
+            tree.Root.Right = new NodeTree(13);
+            tree.Root.Left.Left = new NodeTree(4);
+            tree.Root.Left.Right = new NodeTree(5);
+            Assert.NotEqual(5, tree.FindMax());
+        }
     }
 }
+
