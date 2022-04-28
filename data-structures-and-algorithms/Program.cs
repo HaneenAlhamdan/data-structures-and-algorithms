@@ -178,7 +178,7 @@ namespace data_structures_and_algorithms
 
 
             Console.WriteLine();
-            Console.WriteLine("The Maximum value in Binary Tree is: " + tree.FindMax());
+            Console.WriteLine("The Maximum value in Binary Tree is: " + tree.Maximum());
 
 
         }  
