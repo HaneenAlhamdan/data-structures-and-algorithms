@@ -99,5 +99,36 @@ namespace data_structures_and_algorithms.Trees
 			}
 			return result;
 		}
+
+
+		public List<int> BreadthFirst(BinaryTree tree)
+		{
+			if (Root == null)
+			{
+				throw new Exception("Tree is empty");
+			}
+			Queue<NodeTree> q = new Queue<NodeTree>();
+			List<int> result = new List<int>();
+			q.Enqueue(tree.Root);
+			while (q.Count > 0)
+			{
+				NodeTree Front = q.Peek();
+				result.Add(Front.Value);
+				q.Dequeue();
+				if (Front == null)
+				{
+					continue;
+				}
+				if (Front.Left != null)
+				{
+					q.Enqueue(Front.Left);
+				}
+				if (Front.Right != null)
+				{
+					q.Enqueue(Front.Right);
+				}
+			}
+			return result;
+		}
 	}
 }
