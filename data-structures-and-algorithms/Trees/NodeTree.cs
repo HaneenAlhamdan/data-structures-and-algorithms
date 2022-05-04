@@ -9,9 +9,9 @@ namespace data_structures_and_algorithms.Trees
         public int Value;
         public NodeTree Left, Right;
 
-        public NodeTree(int y)
+        public NodeTree(int x)
         {
-            Value = y;
+            Value = x;
 
             Right = Left = null;
         }

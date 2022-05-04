@@ -181,6 +181,16 @@ namespace data_structures_and_algorithms
             Console.WriteLine("The Maximum value in Binary Tree is: " + tree.Maximum());
 
 
+
+             Console.WriteLine("\n");
+            List<int> result = tree.BreadthFirst(tree);
+            Console.WriteLine("The Tree Breadth First Is: ");
+            for (int i = 0; i < result.Count; i++)
+            {
+                Console.Write(result[i] + " ");
+            }
+
+
         }  
     }
 }
