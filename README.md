@@ -26,3 +26,6 @@
 
 ## [tree-breadth-first](./data-structures-and-algorithms/tree-breadth-first.md)
 
+## [Tree-max](./data-structures-and-algorithms/Tree-max.md)
+
+
