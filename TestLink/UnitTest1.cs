@@ -545,7 +545,7 @@ namespace TestLink
             tree.Root.Right = new NodeTree(13);
             tree.Root.Left.Left = new NodeTree(4);
             tree.Root.Left.Right = new NodeTree(5);
-            Assert.Equal(13, tree.FindMax());
+            Assert.Equal(13, tree.Maximum());
         }
         [Fact]
         public void Test_Max_Binary_Tree_Two()
@@ -556,7 +556,7 @@ namespace TestLink
             tree.Root.Right = new NodeTree(13);
             tree.Root.Left.Left = new NodeTree(4);
             tree.Root.Left.Right = new NodeTree(5);
-            Assert.NotEqual(5, tree.FindMax());
+            Assert.NotEqual(5, tree.Maximum());
         }
     }
 }
