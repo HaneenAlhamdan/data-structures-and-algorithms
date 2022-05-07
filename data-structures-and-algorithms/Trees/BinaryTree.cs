@@ -7,12 +7,12 @@ namespace data_structures_and_algorithms.Trees
 {
 	public class BinaryTree
 	{
-		// Root of Binary Tree
+		
 		public NodeTree Root;
 		public List<int> list = new List<int>();
 		public BinaryTree()
 		{
-			// Set initial tree root
+			
 			Root = null;
 		}
 		public int[] PreOrder(NodeTree Root)
@@ -129,6 +129,52 @@ namespace data_structures_and_algorithms.Trees
 				}
 			}
 			return result;
+		}
+
+
+
+		public void FizzBuzzTree(BinaryTree tree)
+		{
+			Traverse(tree.Root);
+		}
+		
+		public List<string> Traverse(NodeTree node)
+		{
+			if (Root == null)
+			{
+				throw new Exception("Tree is empty");
+			}
+
+			List<string> listTree = new List<string>();
+			if (node.Value % 15 == 0)
+			{
+				listTree.Add("FizzBuzz");
+				Console.WriteLine($"{node.Value}: FizzBuzz");
+			}
+			else if (node.Value % 5 == 0)
+			{
+				listTree.Add("Buzz");
+				Console.WriteLine($"{ node.Value}: Buzz");
+			}
+			else if (node.Value % 3 == 0)
+			{
+				listTree.Add("Fizz");
+				Console.WriteLine($"{ node.Value}: Fizz");
+			}
+			else
+			{
+				listTree.Add($"{node.Value}");
+				Console.WriteLine($"{node.Value}:\'{node.Value}\'");
+			}
+			if (node.Left != null)
+			{
+				Traverse(node.Left);
+			}
+			if (node.Right != null)
+			{
+				Traverse(node.Right);
+			}
+			return listTree;
 		}
 	}
 }
