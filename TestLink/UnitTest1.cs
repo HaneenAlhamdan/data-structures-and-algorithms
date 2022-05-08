@@ -558,6 +558,7 @@ namespace TestLink
             tree.Root.Left.Left = new NodeTree(4);
             tree.Root.Left.Right = new NodeTree(5);
             Assert.NotEqual(5, tree.Maximum());
+
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////
@@ -588,6 +589,7 @@ namespace TestLink
             BinaryTree tree = new BinaryTree();
             Exception ex = Assert.Throws<Exception>(() => tree.BreadthFirst(tree));
             Assert.Equal("Tree is empty", ex.Message);
+
         }
     }
 }
