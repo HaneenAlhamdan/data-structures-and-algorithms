@@ -43,41 +43,8 @@ namespace data_structures_and_algorithms.Trees
                 Root = node;
             }
         }
-        //    public void Add(int value)
-        //    {
-        //        NodeTree newNode = new NodeTree(value);
-        //        if (Root == null)
-        //        {
-        //            Root = newNode;
-        //        }
-        //        else
-        //        {
-        //            NodeTree current = Root;
-        //            NodeTree parent;
-        //            while (true)
-        //            {
-        //                parent = current;
-        //                if (value < parent.Value)
-        //                {
-        //                    current = current.Left;
-        //                    if (current == null)
-        //                    {
-        //                        parent.Left = newNode;
-        //                        return;
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    current = current.Right;
-        //                    if (current == null)
-        //                    {
-        //                        parent.Right = newNode;
-        //                        return;
-        //                    }
-        //                }
-        //            }
-        //        }   
-        //}
+
+      
         public bool Contains(int value)
         {
             NodeTree node = Root;
