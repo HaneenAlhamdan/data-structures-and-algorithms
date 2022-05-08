@@ -43,6 +43,7 @@ namespace data_structures_and_algorithms.Trees
                 Root = node;
             }
         }
+
       
         public bool Contains(int value)
         {
