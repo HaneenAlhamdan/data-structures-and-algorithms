@@ -5,6 +5,7 @@ using Xunit;
 using data_structures_and_algorithms.stack_queue_animal_shelter;
 using data_structures_and_algorithms.stack_queue_brackets;
 using data_structures_and_algorithms.Trees;
+using System.Collections.Generic;
 
 namespace TestLink
 {
@@ -343,79 +344,79 @@ namespace TestLink
         //public void DequeuePeekEmptyQueue()
         //{
         //    Queue queue = new Queue();
-        //    Assert.Null(queue.Dequeue());
-        //    Assert.Null(queue.Peek());
+        ////    Assert.Null(queue.Dequeue());
+        ////    Assert.Null(queue.Peek());
+        ////}
+
+
+        //[Fact]
+        //public void TestEnqueue()
+        //{
+        //    AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
+        //    Cat cat1 = new Cat("Milo", 2);
+        //    Cat cat2 = new Cat("Suger", 3);
+        //    animalShelter.Enqueue(cat1);
+        //    animalShelter.Enqueue(cat2);
+        //    Assert.Equal(cat1.Name, animalShelter.GetAnimals().Peek().Name);
+        //}
+
+        //[Fact]
+        //public void TestDequeue()
+        //{
+        //    AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
+        //    Cat cat1 = new Cat("Milo", 2);
+        //    Cat cat2 = new Cat("Suger", 4);
+        //    Dog dog1 = new Dog("Mouna", 5);
+        //    animalShelter.Enqueue(cat1);
+        //    animalShelter.Enqueue(cat2);
+        //    animalShelter.Enqueue(dog1);
+        //    Assert.Equal(dog1.Name, animalShelter.Dequeue("dog").Name);
+        //    Assert.Equal(cat1.Name, animalShelter.Dequeue("cat").Name);
+        //}
+
+        //[Fact]
+        //public void TestDequeueAnimalNotInShelter()
+        //{
+        //    AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
+        //    Cat cat1 = new Cat("Milo", 2);
+        //    Cat cat2 = new Cat("Suger", 4);
+        //    Dog dog1 = new Dog("Mouna", 5);
+        //    animalShelter.Enqueue(cat1);
+        //    animalShelter.Enqueue(cat2);
+        //    animalShelter.Enqueue(dog1);
+        //    Assert.Null(animalShelter.Dequeue("Fish"));
+        //}
+
+        //[Fact]
+        //public void TestDequeueEmptyShelter()
+        //{
+        //    AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
+        //    Assert.Null(animalShelter.Dequeue("dog"));
         //}
 
 
-        [Fact]
-        public void TestEnqueue()
-        {
-            AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
-            Cat cat1 = new Cat("Milo", 2);
-            Cat cat2 = new Cat("Suger", 3);
-            animalShelter.Enqueue(cat1);
-            animalShelter.Enqueue(cat2);
-            Assert.Equal(cat1.Name, animalShelter.GetAnimals().Peek().Name);
-        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
-        [Fact]
-        public void TestDequeue()
-        {
-            AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
-            Cat cat1 = new Cat("Milo", 2);
-            Cat cat2 = new Cat("Suger", 4);
-            Dog dog1 = new Dog("Mouna", 5);
-            animalShelter.Enqueue(cat1);
-            animalShelter.Enqueue(cat2);
-            animalShelter.Enqueue(dog1);
-            Assert.Equal(dog1.Name, animalShelter.Dequeue("dog").Name);
-            Assert.Equal(cat1.Name, animalShelter.Dequeue("cat").Name);
-        }
 
-        [Fact]
-        public void TestDequeueAnimalNotInShelter()
-        {
-            AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
-            Cat cat1 = new Cat("Milo", 2);
-            Cat cat2 = new Cat("Suger", 4);
-            Dog dog1 = new Dog("Mouna", 5);
-            animalShelter.Enqueue(cat1);
-            animalShelter.Enqueue(cat2);
-            animalShelter.Enqueue(dog1);
-            Assert.Null(animalShelter.Dequeue("Fish"));
-        }
+        //[Fact]
+        //public void Test_Balanced_Brackets()
+        //{
+        //    Assert.True(stack_queue_brackets.ValidateBrackets("({[]})"));
+        //    Assert.True(stack_queue_brackets.ValidateBrackets("{}"));
+        //    Assert.True(stack_queue_brackets.ValidateBrackets("{}(){}"));
+        //    Assert.True(stack_queue_brackets.ValidateBrackets("()[[Extra Characters]]"));
+        //    Assert.True(stack_queue_brackets.ValidateBrackets("(){}[[]]"));
+        //    Assert.True(stack_queue_brackets.ValidateBrackets("{}{Code}[Fellows](())"));
+        //}
 
-        [Fact]
-        public void TestDequeueEmptyShelter()
-        {
-            AnimalShelter animalShelter = new AnimalShelter(1, "Happy Shelter");
-            Assert.Null(animalShelter.Dequeue("dog"));
-        }
-
-        
-        //////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        
-        
-        [Fact]
-        public void Test_Balanced_Brackets()
-        {
-            Assert.True(stack_queue_brackets.ValidateBrackets("({[]})"));
-            Assert.True(stack_queue_brackets.ValidateBrackets("{}"));
-            Assert.True(stack_queue_brackets.ValidateBrackets("{}(){}"));
-            Assert.True(stack_queue_brackets.ValidateBrackets("()[[Extra Characters]]"));
-            Assert.True(stack_queue_brackets.ValidateBrackets("(){}[[]]"));
-            Assert.True(stack_queue_brackets.ValidateBrackets("{}{Code}[Fellows](())"));
-        }
-
-        [Fact]
-        public void Test_Not_Balanced_Brackets()
-        {
-            Assert.False(stack_queue_brackets.ValidateBrackets("(]("));
-            Assert.False(stack_queue_brackets.ValidateBrackets("[({}]"));
-            Assert.False(stack_queue_brackets.ValidateBrackets("{(})"));
-            Assert.False(stack_queue_brackets.ValidateBrackets(""));
-        }
+        //[Fact]
+        //public void Test_Not_Balanced_Brackets()
+        //{
+        //    Assert.False(stack_queue_brackets.ValidateBrackets("(]("));
+        //    Assert.False(stack_queue_brackets.ValidateBrackets("[({}]"));
+        //    Assert.False(stack_queue_brackets.ValidateBrackets("{(})"));
+        //    Assert.False(stack_queue_brackets.ValidateBrackets(""));
+        //}
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -557,7 +558,38 @@ namespace TestLink
             tree.Root.Left.Left = new NodeTree(4);
             tree.Root.Left.Right = new NodeTree(5);
             Assert.NotEqual(5, tree.Maximum());
+
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        ///
+
+        BinaryTree tree1 = new BinaryTree();
+        [Fact]
+        public void Breadth_First()
+        {
+            tree1.Root = new NodeTree(2);
+            tree1.Root.Left = new NodeTree(7);
+            tree1.Root.Right = new NodeTree(5);
+            tree1.Root.Left.Left = new NodeTree(2);
+            tree1.Root.Left.Right = new NodeTree(6);
+            tree1.Root.Left.Right.Left = new NodeTree(5);
+            tree1.Root.Left.Right.Right = new NodeTree(11);
+            tree1.Root.Right.Right = new NodeTree(9);
+            tree1.Root.Right.Right.Left = new NodeTree(4);
+
+
+            List<int> list = new List<int>() { 2, 7, 5, 2, 6, 9, 5, 11, 4 };
+
+            Assert.Equal(list, tree1.BreadthFirst(tree1));
+        }
+        [Fact]
+        public void Test_Breadth_First_Tree3()
+        {
+            BinaryTree tree = new BinaryTree();
+            Exception ex = Assert.Throws<Exception>(() => tree.BreadthFirst(tree));
+            Assert.Equal("Tree is empty", ex.Message);
+
         }
     }
 }
-
