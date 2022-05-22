@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data-structures-and-algorithms", "data-structures-and-algorithms\data-structures-and-algorithms.csproj", "{446550F5-483F-4D06-942A-14C6ED7BC831}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLink", "TestLink\TestLink.csproj", "{6CBEF3D1-D9CD-4FCF-BDE7-9D7CD80F87A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLink", "TestLink\TestLink.csproj", "{6CBEF3D1-D9CD-4FCF-BDE7-9D7CD80F87A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fizz-Buzz-Test", "Fizz-Buzz-Test\Fizz-Buzz-Test.csproj", "{A3084A9F-AE3A-49A3-B92A-B1A7D4D499AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6CBEF3D1-D9CD-4FCF-BDE7-9D7CD80F87A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBEF3D1-D9CD-4FCF-BDE7-9D7CD80F87A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CBEF3D1-D9CD-4FCF-BDE7-9D7CD80F87A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3084A9F-AE3A-49A3-B92A-B1A7D4D499AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3084A9F-AE3A-49A3-B92A-B1A7D4D499AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3084A9F-AE3A-49A3-B92A-B1A7D4D499AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3084A9F-AE3A-49A3-B92A-B1A7D4D499AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
