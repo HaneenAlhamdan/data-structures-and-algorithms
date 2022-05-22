@@ -7,7 +7,7 @@ using data_structures_and_algorithms.stack_queue_brackets;
 using System.Collections.Generic;
 using System.Collections;
 using data_structures_and_algorithms.Trees;
-
+using data_structures_and_algorithms.Tree_Fizz_Buzz;
 
 namespace data_structures_and_algorithms
 {
@@ -191,23 +191,35 @@ namespace data_structures_and_algorithms
             }
 
 
-            Console.WriteLine("Fizz Buzz");
-            NodeTree node1 = new NodeTree(22);
-            NodeTree node2 = new NodeTree(12);
-            NodeTree node3 = new NodeTree(6);
-            NodeTree node4 = new NodeTree(15);
-            NodeTree node5 = new NodeTree(5);
-            NodeTree node6 = new NodeTree(37);
-            BinaryTree fizzBuzz = new BinaryTree();
-            fizzBuzz.Root = new NodeTree(12);
-            fizzBuzz.Root.Left = node1;
-            fizzBuzz.Root.Left.Left = node3;
-            fizzBuzz.Root.Left.Right = node4;
-            fizzBuzz.Root.Right = node2;
-            fizzBuzz.Root.Right.Left = node5;
-            fizzBuzz.Root.Right.Right = node6;
-            fizzBuzz.FizzBuzzTree(fizzBuzz);
-            Console.ReadLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Kary tree");
+
+            K_ary root = new K_ary("1");
+            root.Children.Add(new K_ary("3"));
+            root.Children.Add(new K_ary("5"));
+            root.Children.Add(new K_ary("7"));
+            root.Children[0].Children.Add(new K_ary("15"));
+            root.Children[0].Children.Add(new K_ary("67"));
+            root.Children[0].Children.Add(new K_ary("10"));
+            root.Children[1].Children.Add(new K_ary("6"));
+            root.Children[2].Children.Add(new K_ary("12"));
+            root.Children[2].Children.Add(new K_ary("99"));
+            root.Children[2].Children.Add(new K_ary("65"));
+
+            List<string> list = root.Traverse(root);
+            foreach (string s in list)
+            {
+                Console.WriteLine(s);
+            }
+
+            Console.WriteLine("----------------------------------------------");
+
+            List<string> list2 = root.FizzBuzz(root);
+            foreach (string s in list2)
+            {
+                Console.WriteLine(s);
+            }
 
         }  
     }
