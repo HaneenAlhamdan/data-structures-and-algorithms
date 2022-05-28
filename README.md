@@ -30,4 +30,8 @@
 
 ## [Tree-fizz-buzz](./data-structures-and-algorithms/tree-fizz-buzz.md)
 
+## [InsertionSort](./data-structures-and-algorithms/InsertionSort.md)
+
+## [MergeSort](./data-structures-and-algorithms/MergeSort.md)
+
 
