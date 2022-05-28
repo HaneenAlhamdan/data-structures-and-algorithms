@@ -7,12 +7,14 @@ using data_structures_and_algorithms.stack_queue_brackets;
 using System.Collections.Generic;
 using System.Collections;
 using data_structures_and_algorithms.Trees;
-using data_structures_and_algorithms.Tree_Fizz_Buzz;
+
 
 namespace data_structures_and_algorithms
 {
     class Program
+
     {
+
         public static void Main(string[] args)
         {
             // Linked_List testLink = new Linked_List();
@@ -93,102 +95,102 @@ namespace data_structures_and_algorithms
             //newstack_Queue_Pseudo.Dequeue();
             //Console.WriteLine("Peek after Dequeue is :" + newstack_Queue_Pseudo.Peek());
 
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            AnimalShelter animalShelter = new AnimalShelter(1, " Happy Shelter");
-            Cat cat1 = new Cat("Milo", 2);
-            Cat cat2 = new Cat("Suger", 4);
-            Dog dog1 = new Dog("Mouna", 5);
-            Cat cat3 = new Cat("Lele", 1);
-            Dog dog2 = new Dog("Katy", 7);
-            animalShelter.Enqueue(cat1);
-            animalShelter.Enqueue(cat2);
-            animalShelter.Enqueue(dog1);
-            animalShelter.Enqueue(cat3);
-            animalShelter.Enqueue(dog2);
-            Animal animal1 = animalShelter.Dequeue("cat");
-            Animal animal2 = animalShelter.Dequeue("dog");
-            Animal animal3 = animalShelter.Dequeue("cat");
-            Console.WriteLine(animal1.Name);
-            Console.WriteLine(animal2.Name);
-            Console.WriteLine(animal3.Name);
-
-            Console.WriteLine("\n \n");
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //AnimalShelter animalShelter = new AnimalShelter(1, " Happy Shelter");
+            //Cat cat1 = new Cat("Milo", 2);
+            //Cat cat2 = new Cat("Suger", 4);
+            //Dog dog1 = new Dog("Mouna", 5);
+            //Cat cat3 = new Cat("Lele", 1);
+            //Dog dog2 = new Dog("Katy", 7);
+            //animalShelter.Enqueue(cat1);
+            //animalShelter.Enqueue(cat2);
+            //animalShelter.Enqueue(dog1);
+            //animalShelter.Enqueue(cat3);
+            //animalShelter.Enqueue(dog2);
+            //Animal animal1 = animalShelter.Dequeue("cat");
+            //Animal animal2 = animalShelter.Dequeue("dog");
+            //Animal animal3 = animalShelter.Dequeue("cat");
+            //Console.WriteLine(animal1.Name);
+            //Console.WriteLine(animal2.Name);
+            //Console.WriteLine(animal3.Name);
 
-            Console.WriteLine(stack_queue_brackets.stack_queue_brackets.ValidateBrackets("{(})"));
+            //Console.WriteLine("\n \n");
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            Console.WriteLine("\n \n");
-           
-
-            BinaryTree tree = new BinaryTree();
-            tree.Root = new NodeTree(1);
-            tree.Root.Left = new NodeTree(2);
-            tree.Root.Right = new NodeTree(3);
-            tree.Root.Left.Left = new NodeTree(4);
-            tree.Root.Left.Right = new NodeTree(5);
-
-            Console.WriteLine("\n" + "Pre order: ");
-            int[] arr = tree.PreOrder(tree.Root);
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(arr[i] + " ");
-            }
-            tree.list.Clear();
-            Console.WriteLine();
-
-            Console.WriteLine("\n" + "In order: ");
-            int[] arr2 = tree.InOrder(tree.Root);
-
-            for (int i = 0; i < arr2.Length; i++)
-            {
-                Console.Write(arr2[i] + " ");
-            }
-            tree.list.Clear();
-            Console.WriteLine();
-
-            Console.WriteLine("\n"+ "Post order: ");
-            int[] arr3 = tree.PostOrder(tree.Root);
-
-            for (int i = 0; i < arr3.Length; i++)
-            {
-                Console.Write(arr3[i] + " ");
-            }
-            Console.WriteLine();
+            //Console.WriteLine(stack_queue_brackets.stack_queue_brackets.ValidateBrackets("{(})"));
 
 
-            BinarySearchTree binarySearchTree = new BinarySearchTree();
-            binarySearchTree.Add(16);
-            binarySearchTree.Add(22);
-            binarySearchTree.Add(39);
-            binarySearchTree.Add(20);
-            binarySearchTree.Add(33);
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            int[] arr4 = binarySearchTree.PreOrder(binarySearchTree.Root);
-            for (int i = 0; i < arr4.Length; i++)
-            {
-                Console.Write(arr4[i] + " ");
-            }
-            Console.WriteLine("\n");
-            Console.WriteLine(binarySearchTree.Contains(0));
+            //Console.WriteLine("\n \n");
 
 
+            //BinaryTree tree = new BinaryTree();
+            //tree.Root = new NodeTree(1);
+            //tree.Root.Left = new NodeTree(2);
+            //tree.Root.Right = new NodeTree(3);
+            //tree.Root.Left.Left = new NodeTree(4);
+            //tree.Root.Left.Right = new NodeTree(5);
 
-            Console.WriteLine();
-            Console.WriteLine("The Maximum value in Binary Tree is: " + tree.Maximum());
+            //Console.WriteLine("\n" + "Pre order: ");
+            //int[] arr = tree.PreOrder(tree.Root);
+
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    Console.Write(arr[i] + " ");
+            //}
+            //tree.list.Clear();
+            //Console.WriteLine();
+
+            //Console.WriteLine("\n" + "In order: ");
+            //int[] arr2 = tree.InOrder(tree.Root);
+
+            //for (int i = 0; i < arr2.Length; i++)
+            //{
+            //    Console.Write(arr2[i] + " ");
+            //}
+            //tree.list.Clear();
+            //Console.WriteLine();
+
+            //Console.WriteLine("\n" + "Post order: ");
+            //int[] arr3 = tree.PostOrder(tree.Root);
+
+            //for (int i = 0; i < arr3.Length; i++)
+            //{
+            //    Console.Write(arr3[i] + " ");
+            //}
+            //Console.WriteLine();
+
+
+            //BinarySearchTree binarySearchTree = new BinarySearchTree();
+            //binarySearchTree.Add(16);
+            //binarySearchTree.Add(22);
+            //binarySearchTree.Add(39);
+            //binarySearchTree.Add(20);
+            //binarySearchTree.Add(33);
+
+            //int[] arr4 = binarySearchTree.PreOrder(binarySearchTree.Root);
+            //for (int i = 0; i < arr4.Length; i++)
+            //{
+            //    Console.Write(arr4[i] + " ");
+            //}
+            //Console.WriteLine("\n");
+            //Console.WriteLine(binarySearchTree.Contains(0));
 
 
 
-             Console.WriteLine("\n");
-            List<int> result = tree.BreadthFirst(tree);
-            Console.WriteLine("The Tree Breadth First Is: ");
-            for (int i = 0; i < result.Count; i++)
-            {
-                Console.Write(result[i] + " ");
-            }
+            //Console.WriteLine();
+            //Console.WriteLine("The Maximum value in Binary Tree is: " + tree.Maximum());
+
+
+
+            //Console.WriteLine("\n");
+            //List<int> result = tree.BreadthFirst(tree);
+            //Console.WriteLine("The Tree Breadth First Is: ");
+            //for (int i = 0; i < result.Count; i++)
+            //{
+            //    Console.Write(result[i] + " ");
+            //}
 
 
             Console.WriteLine();
@@ -221,7 +223,23 @@ namespace data_structures_and_algorithms
                 Console.WriteLine(s);
             }
 
-        }  
+
+
+            Console.WriteLine("Before Insertion Sort");
+            int[] array = { 9, 20, 14, 22, 7 };
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("After Insertion Sort");
+            InsertionSort sort = new InsertionSort();
+            sort.Insertion_Sort(array);
+            sort.PrintArray(array);
+
+        }
+        
+
     }
 }
     
