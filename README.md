@@ -28,4 +28,5 @@
 
 ## [Tree-max](./data-structures-and-algorithms/Tree-max.md)
 
+## [InsertionSort](./data-structures-and-algorithms/InsertionSort.md)
 
