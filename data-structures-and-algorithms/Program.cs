@@ -7,7 +7,9 @@ using data_structures_and_algorithms.stack_queue_brackets;
 using System.Collections.Generic;
 using System.Collections;
 using data_structures_and_algorithms.Trees;
-
+using data_structures_and_algorithms.Insertion_Sort;
+using data_structures_and_algorithms.Merge_Sort;
+using data_structures_and_algorithms.QuickSort;
 
 namespace data_structures_and_algorithms
 {
@@ -193,53 +195,74 @@ namespace data_structures_and_algorithms
             //}
 
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            Console.WriteLine("Kary tree");
+            //Console.WriteLine("Kary tree");
 
-            K_ary root = new K_ary("1");
-            root.Children.Add(new K_ary("3"));
-            root.Children.Add(new K_ary("5"));
-            root.Children.Add(new K_ary("7"));
-            root.Children[0].Children.Add(new K_ary("15"));
-            root.Children[0].Children.Add(new K_ary("67"));
-            root.Children[0].Children.Add(new K_ary("10"));
-            root.Children[1].Children.Add(new K_ary("6"));
-            root.Children[2].Children.Add(new K_ary("12"));
-            root.Children[2].Children.Add(new K_ary("99"));
-            root.Children[2].Children.Add(new K_ary("65"));
+            //K_ary root = new K_ary("1");
+            //root.Children.Add(new K_ary("3"));
+            //root.Children.Add(new K_ary("5"));
+            //root.Children.Add(new K_ary("7"));
+            //root.Children[0].Children.Add(new K_ary("15"));
+            //root.Children[0].Children.Add(new K_ary("67"));
+            //root.Children[0].Children.Add(new K_ary("10"));
+            //root.Children[1].Children.Add(new K_ary("6"));
+            //root.Children[2].Children.Add(new K_ary("12"));
+            //root.Children[2].Children.Add(new K_ary("99"));
+            //root.Children[2].Children.Add(new K_ary("65"));
 
-            List<string> list = root.Traverse(root);
-            foreach (string s in list)
-            {
-                Console.WriteLine(s);
-            }
+            //List<string> list = root.Traverse(root);
+            //foreach (string s in list)
+            //{
+            //    Console.WriteLine(s);
+            //}
 
-            Console.WriteLine("----------------------------------------------");
+            //Console.WriteLine("----------------------------------------------");
 
-            List<string> list2 = root.FizzBuzz(root);
-            foreach (string s in list2)
-            {
-                Console.WriteLine(s);
-            }
+            //List<string> list2 = root.FizzBuzz(root);
+            //foreach (string s in list2)
+            //{
+            //    Console.WriteLine(s);
+            //}
 
 
 
-            Console.WriteLine("Before Insertion Sort");
-            int[] array = { 9, 20, 14, 22, 7 };
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write(array[i] + " ");
-            }
-            Console.WriteLine();
-            Console.WriteLine("After Insertion Sort");
-            InsertionSort sort = new InsertionSort();
-            sort.Insertion_Sort(array);
-            sort.PrintArray(array);
+            //Console.WriteLine("Before Insertion Sort");
+            //int[] array = { 9, 20, 14, 22, 7 };
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write(array[i] + " ");
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine("After Insertion Sort");
+            //InsertionSort sort = new InsertionSort();
+            //sort.Insertion_Sort(array);
+            //sort.PrintArray(array);
+
+            //Console.WriteLine("----------------------------------------------");
+            //Console.WriteLine();
+            //int[] MyArray = { 8, 4, 23, 42, 16, 15 };
+            //Console.Write("Before Merge Sort:- \n");
+            //MergeSort merge = new MergeSort();
+            //merge.PrintArray(MyArray);
+            //Console.WriteLine();
+            //merge.Mergesort(MyArray);
+            //Console.Write("After Merge Sort:- \n");
+            //merge.PrintArray(MyArray);
+
+            ////////////////////////////////////////////////////////////////////////////
+
+            int[] arrr = { 22, 1, 17, 36, 9, 12 };
+            Quick_Sort quickSort = new Quick_Sort();
+            Console.WriteLine("Before Quick Sort:- ");
+            quickSort.PrintArray(arrr);
+            quickSort.Quicksort(arrr, 0, arrr.Length - 1);
+            Console.WriteLine("After Quick Sort:-");
+            quickSort.PrintArray(arrr);
 
         }
-        
 
+      
     }
 }
     
