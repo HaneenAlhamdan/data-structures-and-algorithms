@@ -9,6 +9,7 @@ using System.Collections;
 using data_structures_and_algorithms.Trees;
 using data_structures_and_algorithms.Insertion_Sort;
 using data_structures_and_algorithms.Merge_Sort;
+using data_structures_and_algorithms.QuickSort;
 
 namespace data_structures_and_algorithms
 {
@@ -226,32 +227,42 @@ namespace data_structures_and_algorithms
 
 
 
-            Console.WriteLine("Before Insertion Sort");
-            int[] array = { 9, 20, 14, 22, 7 };
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write(array[i] + " ");
-            }
-            Console.WriteLine();
-            Console.WriteLine("After Insertion Sort");
-            InsertionSort sort = new InsertionSort();
-            sort.Insertion_Sort(array);
-            sort.PrintArray(array);
+            //Console.WriteLine("Before Insertion Sort");
+            //int[] array = { 9, 20, 14, 22, 7 };
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write(array[i] + " ");
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine("After Insertion Sort");
+            //InsertionSort sort = new InsertionSort();
+            //sort.Insertion_Sort(array);
+            //sort.PrintArray(array);
 
-            Console.WriteLine("----------------------------------------------");
-            Console.WriteLine();
-            int[] MyArray = { 8, 4, 23, 42, 16, 15 };
-            Console.Write("Before Merge Sort:- \n");
-            MergeSort merge = new MergeSort();
-            merge.PrintArray(MyArray);
-            Console.WriteLine();
-            merge.Mergesort(MyArray);
-            Console.Write("After Merge Sort:- \n");
-            merge.PrintArray(MyArray);
+            //Console.WriteLine("----------------------------------------------");
+            //Console.WriteLine();
+            //int[] MyArray = { 8, 4, 23, 42, 16, 15 };
+            //Console.Write("Before Merge Sort:- \n");
+            //MergeSort merge = new MergeSort();
+            //merge.PrintArray(MyArray);
+            //Console.WriteLine();
+            //merge.Mergesort(MyArray);
+            //Console.Write("After Merge Sort:- \n");
+            //merge.PrintArray(MyArray);
+
+            ////////////////////////////////////////////////////////////////////////////
+
+            int[] arrr = { 22, 1, 17, 36, 9, 12 };
+            Quick_Sort quickSort = new Quick_Sort();
+            Console.WriteLine("Before Quick Sort:- ");
+            quickSort.PrintArray(arrr);
+            quickSort.Quicksort(arrr, 0, arrr.Length - 1);
+            Console.WriteLine("After Quick Sort:-");
+            quickSort.PrintArray(arrr);
 
         }
-        
 
+      
     }
 }
     
