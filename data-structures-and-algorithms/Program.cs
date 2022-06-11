@@ -10,6 +10,7 @@ using data_structures_and_algorithms.Trees;
 using data_structures_and_algorithms.Insertion_Sort;
 using data_structures_and_algorithms.Merge_Sort;
 using data_structures_and_algorithms.QuickSort;
+using data_structures_and_algorithms.HashTable;
 
 namespace data_structures_and_algorithms
 {
@@ -252,15 +253,26 @@ namespace data_structures_and_algorithms
 
             ////////////////////////////////////////////////////////////////////////////
 
-            int[] arrr = { 22, 1, 17, 36, 9, 12 };
-            Quick_Sort quickSort = new Quick_Sort();
-            Console.WriteLine("Before Quick Sort:- ");
-            quickSort.PrintArray(arrr);
-            quickSort.Quicksort(arrr, 0, arrr.Length - 1);
-            Console.WriteLine("After Quick Sort:-");
-            quickSort.PrintArray(arrr);
+            //int[] arrr = { 22, 1, 17, 36, 9, 12 };
+            //Quick_Sort quickSort = new Quick_Sort();
+            //Console.WriteLine("Before Quick Sort:- ");
+            //quickSort.PrintArray(arrr);
+            //quickSort.Quicksort(arrr, 0, arrr.Length - 1);
+            //Console.WriteLine("After Quick Sort:-");
+            //quickSort.PrintArray(arrr);
+
+            ////////////////////////////////////////////////////////////////
+            
+
+            Console.WriteLine();
+
+          
 
         }
+
+
+
+
 
       
     }
