@@ -7,19 +7,16 @@ namespace data_structures_and_algorithms.HashTable
     public class HashNode
 
     {
-        public int Key;
-        public string Value;
-        public HashNode Next;
+        public string key;
+        public string value;
+        // Reference to next node
+        public HashNode next;
 
-        /// <summary>
-        /// Constructor to set the key and value for each item that we add in the HashTable.
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        public HashNode(int key, string value)
+        // Constructor
+        public HashNode(string key, string value)
         {
-            Key = key;
-            Value = value;
+            this.key = key;
+            this.value = value;
         }
 
     }
