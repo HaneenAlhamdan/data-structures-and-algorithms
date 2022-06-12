@@ -17,5 +17,6 @@
 ## [Tree-fizz-buzz](./data-structures-and-algorithms/tree-fizz-buzz.md)
 ## [QuickSort](./data-structures-and-algorithms/QuickSort/QuickSort.md)
 ## [hashtable](./data-structures-and-algorithms/HashTable/hashtable.md)
+## [hashmap](./data-structures-and-algorithms/HashMap/hashmap.md)
 
 
