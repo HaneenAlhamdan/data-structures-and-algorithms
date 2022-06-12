@@ -11,6 +11,7 @@ using data_structures_and_algorithms.Insertion_Sort;
 using data_structures_and_algorithms.Merge_Sort;
 using data_structures_and_algorithms.QuickSort;
 using data_structures_and_algorithms.HashTable;
+using data_structures_and_algorithms.HashMap;
 
 namespace data_structures_and_algorithms
 {
@@ -266,16 +267,22 @@ namespace data_structures_and_algorithms
 
             Console.WriteLine();
 
-          
+            hashmap hashmaps = new hashmap();
+            Console.WriteLine("Repeated word: " + hashmaps.HashmapRepeatedWord("Epic is the leading digital reading platform—built on a collection of 40,000+ popular, high-quality books from 250+ of the world’s best publishers—that safely fuels curiosity and reading confidence for kids 12 and under."));
+            Console.WriteLine("Repeated word: " + hashmaps.HashmapRepeatedWord("Love the progressive activities! I don't have to take the time to search for activities for my 3-year-old, and my 5-year-old just follows along when she's playing by herself... So I know everyone's doing the right things for their ages!"));
+            Console.WriteLine("Repeated word: " + hashmaps.HashmapRepeatedWord("don't have to take the time to search for activities"));
+            Console.WriteLine("Repeated word: " + hashmaps.HashmapRepeatedWord(" "));
 
         }
+
+    }
 
 
 
 
 
       
-    }
+    
 }
     
 
