@@ -7,140 +7,84 @@ namespace data_structures_and_algorithms.HashTable
 {
     public class Hashtable
     {
-        public int hashTableSize;
-        public HashNode[] hashtable;
-
-        /// <summary>
-        /// Constructor for the Hashtable.
-        /// </summary>
-        /// <param name="hashSize"></param>
-        public Hashtable(int hashSize)
+        public HashNode[] Table;
+        public int size;
+        public Hashtable(int size)
         {
-            hashTableSize = hashSize;
-            hashtable = new HashNode[hashSize];
+            this.size = size;
+            Table = new HashNode[size];
         }
 
-        /// <summary>
-        /// This method hashes the key, and set the key and value pair in the table,
-        /// handling collisions as needed.
-        /// a given key already exist, replace its value from the value argument given to this method.
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        public void Set(int key, string value)
+        public void Set(string key, string value)
         {
-            if (key < 0)
+            int index = Hash(key);
+            HashNode node = new HashNode(key, value);
+            if (Table[index] == null)
             {
-                throw new Exception("Key value is negative and it's not allowed.");
-            }
-
-            int hashedKey = Hash(key);
-            if (hashtable[hashedKey] == null)
-            {
-                hashtable[hashedKey] = new HashNode(key, value);
+                Table[index] = node;
             }
             else
             {
-                // If we have a collision, we add the new item to the back of a specific node.
-                HashNode temp = hashtable[hashedKey];
-                // If our value is at the first index, we iterate only once so that the complexity
-                // is O(1), otherwise it will be O(n).
-                while (temp.Next != null || temp.Key == key)
+                HashNode cur = Table[index];
+                while (cur.next != null)
                 {
-                    // If we want to change the value of an item we already have, just overwrite it.
-                    if (temp.Key == key)
-                    {
-                        temp.Value = value;
-                        return;
-                    }
-
-                    temp = temp.Next;
+                    cur = cur.next;
                 }
-                // Set the pointer for our added item that it's key causes a collision.
-                temp.Next = new HashNode(key, value);
+                cur.next = new HashNode(key, value);
             }
         }
-
-        /// <summary>
-        /// Get method for a specific key.
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns> Value associated with that key in the table </returns>
-        public string Get(int key)
+        public HashNode Get(string key)
         {
-            if (!Contains(key))
+            int index = Hash(key);
+            HashNode head = Table[index];
+            while (head != null)
             {
-                return null;
+                if (head.key.Equals(key))
+                {
+                    return head;
+                }
+                head = head.next;
             }
-
-            int hashedKey = Hash(key);
-
-            HashNode temp = hashtable[hashedKey];
-            while (temp.Key != key)
-            {
-                temp = temp.Next;
-            }
-
-            return temp.Value;
+            return null;
         }
-
-        /// <summary>
-        /// A method that indicates if the key exists in the table already.
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns> Boolean </returns>
-        public bool Contains(int key)
+        public bool Contains(string key)
         {
-            int hashedKey = Hash(key);
-            HashNode temp = hashtable[hashedKey];
-            while (temp != null)
+            // Find head of chain for given key
+            int index = Hash(key);
+            HashNode head = Table[index];
+
+            // Search key
+            while (head != null)
             {
-                if (temp.Key == key)
+                if (head.key.Equals(key))
                     return true;
-
-                temp = temp.Next;
+                head = head.next;
             }
+
+            // If key not found
             return false;
         }
-
-        /// <summary>
-        /// A method that adds all the keys in the HashTable in a list.
-        /// </summary>
-        /// <returns> A list of keys </returns>
-        public List<int> Keys()
+        public List<string> Keys()
         {
-            // Empty list that will hold ours keys.
-            List<int> keys = new List<int>();
-            // Add all the items that are not null.
-            List<HashNode> items = hashtable.Where(x => x != null).ToList();
-            // Loop over the list and add the key for each item in the HashTable.
-            foreach (HashNode node in items)
+            List<string> keys = new List<string>();
+            for (int i = 0; i < Table.Length; i++)
             {
-                if (node.Next == null)
+                HashNode current = Table[i];
+                while (current != null)
                 {
-                    keys.Add(node.Key);
-                }
-                else
-                {
-                    HashNode temp = node;
-                    while (temp != null)
-                    {
-                        keys.Add(temp.Key);
-                        temp = temp.Next;
-                    }
+                    keys.Add(current.key);
+                    current = current.next;
                 }
             }
+
             return keys;
         }
-
-        /// <summary>
-        /// Our simple hashing method that returns.
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns> the index for a single item. </returns>
-        public int Hash(int key)
+        public int Hash(string key)
         {
-            return key % hashTableSize;
+            int hashcode = 0;
+            int index = hashcode * 599 % size;
+            index = index < 0 ? index * -1 : index;
+            return index;
         }
 
     }
