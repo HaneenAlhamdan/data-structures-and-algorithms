@@ -12,6 +12,8 @@ using data_structures_and_algorithms.Merge_Sort;
 using data_structures_and_algorithms.QuickSort;
 using data_structures_and_algorithms.HashTable;
 using data_structures_and_algorithms.HashMap;
+using data_structures_and_algorithms.HashLeftJoin;
+using Hashtable = data_structures_and_algorithms.HashTable.Hashtable;
 
 namespace data_structures_and_algorithms
 {
@@ -263,7 +265,7 @@ namespace data_structures_and_algorithms
             //quickSort.PrintArray(arrr);
 
             ////////////////////////////////////////////////////////////////
-            
+
 
             Console.WriteLine();
 
@@ -273,16 +275,66 @@ namespace data_structures_and_algorithms
             Console.WriteLine("Repeated word: " + hashmaps.HashmapRepeatedWord("don't have to take the time to search for activities"));
             Console.WriteLine("Repeated word: " + hashmaps.HashmapRepeatedWord(" "));
 
+
+            //////////////////////////////////////////////////////////
+
+
+            Console.WriteLine();
+
+
+
+
+        }
+        public static List<string> Common(HashLeftJoin tree1, HashLeftJoin tree2)
+        {
+            if (tree1 == null || tree2 == null) { throw new Exception("The tree is empty"); }
+
+            List<string> answer = new List<string>();
+
+            HashTable table1 = new HashTable(50);
+            HashTable table2 = new HashTable(50);
+
+
+            List<string> tree1Values = tree1.BreadthFirst(tree1.Root);
+            List<string> tree2Values = tree1.BreadthFirst(tree1.Root);
+
+            foreach (var value in tree1Values)
+            {
+                int key = table1.HashFuncation(value);
+                table1.Insert(key.ToString(), value);
+            }
+            foreach (var value in tree2Values)
+            {
+                int key = table2.HashFuncation(value);
+                table2.Insert(key.ToString(), value);
+            }
+
+            List<string> table1Keys = table1.GetKeys(table1);
+
+            for (int i = 0; i < table1Keys.Count; i++)
+            {
+                if (table2.Contains(table1Keys[i]))
+                {
+                    answer.Add(table1Keys[i]);
+                }
+            }
+            if (answer.Count > 0)
+            {
+                return answer;
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
+
+
+
+
+
     }
-
-
-
-
-
-      
-    
 }
     
 
