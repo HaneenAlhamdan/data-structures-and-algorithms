@@ -7,16 +7,14 @@ namespace data_structures_and_algorithms.HashTable
     public class HashNode
 
     {
-        public string key;
-        public string value;
-        // Reference to next node
-        public HashNode next;
+        public string Key;
+        public string Value;
+        public HashNode Next;
 
-        // Constructor
         public HashNode(string key, string value)
         {
-            this.key = key;
-            this.value = value;
+            Key = key;
+            Value = value;
         }
 
     }
