@@ -5,113 +5,59 @@ using System.Text;
 
 namespace data_structures_and_algorithms.HashLeftJoin
 {
-    public class HashLeftJoin 
+    public class HashLeftJoin : Hashtable
     {
 
-        public Node Root { get; set; }
-        public List<object> List = new List<object>();
+        public HashLeftJoin(int size) : base(size)
+        { }
 
-        public HashLeftJoin()
+        public static List<string[]> LEFTJOINs(Hashtable left, Hashtable right)
         {
-            Root = null;
-        }
+            if ((left == null && right == null) || (left == null)) { return null; }
 
-        public Node GetRoot()
-        {
-            return Root;
-        }
-        public void Inorder()
-        {
-            Inorder(Root);
-            Console.WriteLine("");
-        }
-        public object[] Inorder(Node node)
-        {
-            if (node == null)
-                return null;
-
-
-            Inorder(node.Left);
-            List.Add(node.Value);
-            Console.Write(node.Value + " ");
-            Inorder(node.Right);
-            return List.ToArray();
-
-        }
-
-        public void Preorder()
-        {
-            Preorder(Root);
-            Console.WriteLine("");
-
-        }
-        public object[] Preorder(Node node)
-        {
-            if (node == null)
-                return null;
-
-            List.Add(node.Value);
-            Console.Write(node.Value + " ");
-            Preorder(node.Left);
-            Preorder(node.Right);
-            return List.ToArray();
-
-        }
-
-
-
-        public void Postorder()
-        {
-            Postorder(Root);
-            Console.WriteLine("");
-
-        }
-        public object[] Postorder(Node node)
-        {
-            if (node == null)
-                return null;
-
-
-            Postorder(node.Left);
-            Postorder(node.Right);
-            List.Add(node.Value);
-            Console.Write(node.Value + " ");
-            return List.ToArray();
-        }
-
-        public void BreadthFirst()
-        {
-            BreadthFirst(Root);
-
-        }
-
-        public List<string> BreadthFirst(Node root)
-        {
-            List<string> treeValues = new List<string>();
-            Queue<Node> queue = new Queue<Node>();
-            queue.Enqueue(root);
-            treeValues.Add(root.Value);
-            while (queue.Count != 0)
+            if (right == null)
             {
-                Node tempNode = queue.Dequeue();
-                Console.Write(tempNode.Value + " ");
-
-                /*Enqueue left child */
-                if (tempNode.Left != null)
+                List<string[]> leftList = new List<string[]>();
+                for (int i = 0; i < left.buckets.Length; i++)
                 {
-                    queue.Enqueue(tempNode.Left);
-                    treeValues.Add(tempNode.Left.Value);
+                    HashNode temp = left.buckets[i];
+                    while (temp != null)
+                    {
+                        leftList.Add(new string[] { $"{temp.Key}", $"{temp.Value}" });
+                        temp = temp.Next;
+                    }
                 }
+                return leftList;
+            }
 
-                /*Enqueue right child */
-                if (tempNode.Right != null)
+            List<string[]> arrayList = new List<string[]>();
+            for (int i = 0; i < left.buckets.Length; i++)
+            {
+                HashNode temp = left.buckets[i];
+                while (temp != null)
                 {
-                    queue.Enqueue(tempNode.Right);
-                    treeValues.Add(tempNode.Right.Value);
-
+                    arrayList.Add(new string[] { $"{temp.Key}", $"{temp.Value}", $"{right.Get($"{temp.Key}")}" });
+                    temp = temp.Next;
                 }
             }
-            return treeValues;
+
+            return arrayList;
+        }
+
+        public void PrintList(List<string[]> list)
+        {
+            if (list == null) { Console.WriteLine("List is empty!"); }
+            foreach (var array in list)
+            {
+                Console.Write("[");
+                for (int i = 0; i < array.Length; i++)
+                {
+                    if (array[i] == null) { Console.Write("NULL"); }
+                    Console.Write(array[i]);
+                    if (i < array.Length - 1) { Console.Write(", "); }
+                }
+                Console.Write("] \n");
+            }
         }
 
     }

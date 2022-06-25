@@ -7,84 +7,119 @@ namespace data_structures_and_algorithms.HashTable
 {
     public class Hashtable
     {
-        public HashNode[] Table;
-        public int size;
-        public Hashtable(int size)
+        public int hashTableSize;
+        public HashNode[] buckets;
+
+        
+        public Hashtable(int hashSize)
         {
-            this.size = size;
-            Table = new HashNode[size];
+            hashTableSize = hashSize;
+            buckets = new HashNode[hashSize];
         }
 
+       
         public void Set(string key, string value)
         {
-            int index = Hash(key);
-            HashNode node = new HashNode(key, value);
-            if (Table[index] == null)
+            int hashedKey = Hash(key);
+            if (buckets[hashedKey] == null)
             {
-                Table[index] = node;
+                buckets[hashedKey] = new HashNode(key, value);
             }
             else
             {
-                HashNode cur = Table[index];
-                while (cur.next != null)
+                
+                HashNode temp = buckets[hashedKey];
+               
+                while (temp.Next != null || temp.Key == key)
                 {
-                    cur = cur.next;
+                   
+                    if (temp.Key == key)
+                    {
+                        temp.Value = value;
+                        return;
+                    }
+
+                    temp = temp.Next;
                 }
-                cur.next = new HashNode(key, value);
+              
+                temp.Next = new HashNode(key, value);
             }
         }
-        public HashNode Get(string key)
+
+    
+        public string Get(string key)
         {
-            int index = Hash(key);
-            HashNode head = Table[index];
-            while (head != null)
+            if (!Contains(key))
             {
-                if (head.key.Equals(key))
-                {
-                    return head;
-                }
-                head = head.next;
+                return null;
             }
-            return null;
+
+            int hashedKey = Hash(key);
+
+            HashNode temp = buckets[hashedKey];
+            while (temp.Key != key)
+            {
+                temp = temp.Next;
+            }
+
+            return temp.Value;
         }
+
+        
         public bool Contains(string key)
         {
-            // Find head of chain for given key
-            int index = Hash(key);
-            HashNode head = Table[index];
-
-            // Search key
-            while (head != null)
+            int hashedKey = Hash(key);
+            HashNode temp = buckets[hashedKey];
+            while (temp != null)
             {
-                if (head.key.Equals(key))
+                if (temp.Key == key)
+                {
                     return true;
-                head = head.next;
+                }
+
+                temp = temp.Next;
             }
 
-            // If key not found
             return false;
         }
+
+      
         public List<string> Keys()
         {
+           
             List<string> keys = new List<string>();
-            for (int i = 0; i < Table.Length; i++)
+       
+            List<HashNode> items = buckets.Where(x => x != null).ToList();
+            
+            foreach (HashNode node in items)
             {
-                HashNode current = Table[i];
-                while (current != null)
+                if (node.Next == null)
                 {
-                    keys.Add(current.key);
-                    current = current.next;
+                    keys.Add(node.Key);
+                }
+                else
+                {
+                    HashNode temp = node;
+                    while (temp != null)
+                    {
+                        keys.Add(temp.Key);
+                        temp = temp.Next;
+                    }
                 }
             }
-
             return keys;
         }
+
+       
         public int Hash(string key)
         {
-            int hashcode = 0;
-            int index = hashcode * 599 % size;
-            index = index < 0 ? index * -1 : index;
-            return index;
+            int index = 7;
+            for (int i = 0; i < key.Length; i++)
+            {
+                int asciiVal = (int)key[i] * i;
+                index = index * 31 + asciiVal;
+            }
+            return index % hashTableSize;
         }
 
     }
