@@ -13,11 +13,13 @@ using data_structures_and_algorithms.QuickSort;
 using data_structures_and_algorithms.HashTable;
 using data_structures_and_algorithms.HashMap;
 using data_structures_and_algorithms.HashLeftJoin;
-using Hashtable = data_structures_and_algorithms.HashTable.Hashtable;
+using data_structures_and_algorithms.TreeIntersection;
+using data_structures_and_algorithms.Graph;
+using Microsoft.Azure.Management.ResourceManager.Fluent.Core.DAG;
 
 namespace data_structures_and_algorithms
 {
-    class Program
+    public class Program
 
     {
 
@@ -281,11 +283,68 @@ namespace data_structures_and_algorithms
 
             Console.WriteLine();
 
+            BinaryTree tree1 = new BinaryTree();
+            tree1.Root = new NodeTree(1);
+            tree1.Root.Left = new NodeTree(2);
+            tree1.Root.Right = new NodeTree(13);
+            tree1.Root.Left.Left = new NodeTree(4);
+            tree1.Root.Left.Right = new NodeTree(5);
+
+            BinaryTree tree2 = new BinaryTree();
+            tree2.Root = new NodeTree(2);
+            tree2.Root.Left = new NodeTree(23);
+            tree2.Root.Right = new NodeTree(3);
+            tree2.Root.Left.Left = new NodeTree(6);
+            tree2.Root.Left.Right = new NodeTree(5);
+
+            TreeIntersection tree_Intersection = new TreeIntersection();
+            List<int> intersections = tree_Intersection.Tree_Intersection(tree1, tree2);
+
+            Console.WriteLine("intersections are: ");
+            foreach (int value in intersections)
+            {
+                Console.Write(value + " ");
+            }
+
+
+            /////////////////////////////////////////////////////////////
+
+            Console.WriteLine();
+
+            Graph gr = new Graph(true, true);
+            int V = 5;
+            List<int>[] adj = new List<int>[V];
+            for (int i = 0; i < V; i++)
+                adj[i] = new List<int>();
+           
+            Vertex vertex = new Vertex(1);
+            Vertex vertex2 = new Vertex(2);
+            Vertex vertex3 = new Vertex(3);
+            Vertex vertex4 = new Vertex(4);
+            Vertex vertex5 = new Vertex(5);
+            Vertex vertex6 = new Vertex(6);
+
+            gr.AddEdge(vertex2, vertex6, 7);
+            gr.AddEdge(vertex, vertex5, 12);
+            gr.AddEdge(vertex4, vertex5, 2);
+            gr.AddEdge(vertex3, vertex2, 3);
+            List<Vertex> list = gr.BreadthFirst(vertex);
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine("breadth " + list[i].value);
+            }
+            Console.WriteLine("size is " + gr.Size());
+            gr.PrintGraph(adj, V);
+
+
+
+
 
 
 
         }
         
+
 
 
 

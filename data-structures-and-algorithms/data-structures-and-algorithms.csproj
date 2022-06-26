@@ -6,4 +6,8 @@
     <RootNamespace>data_structures_and_algorithms</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Management.ResourceManager.Fluent" Version="1.38.1" />
+  </ItemGroup>
+
 </Project>
