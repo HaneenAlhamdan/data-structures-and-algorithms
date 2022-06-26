@@ -64,60 +64,60 @@ namespace TestLink
         //}
             /////////////////////////////////////////////////////////////////////
 
-            [Fact]
-            public void Quick_Sort1()
-            {
-                int[] array = { 0, 0, 0, 0, 0 };
-                int[] result = { 0, 0, 0, 0, 0 };
+            //[Fact]
+            //public void Quick_Sort1()
+            //{
+            //    int[] array = { 0, 0, 0, 0, 0 };
+            //    int[] result = { 0, 0, 0, 0, 0 };
 
-            Quick_Sort sort = new Quick_Sort();
-                sort.Quicksort(array, 0, array.Length - 1);
-                Assert.Equal(result, sort.PrintArray(array));
+            //Quick_Sort sort = new Quick_Sort();
+            //    sort.Quicksort(array, 0, array.Length - 1);
+            //    Assert.Equal(result, sort.PrintArray(array));
 
-            }
-            [Fact]
-            public void Quick_Sort2()
-            {
-                int[] array = { 12, 11, 13, 5, 6 };
-                int[] result = { 5, 6, 11, 12, 13 };
+            //}
+            //[Fact]
+            //public void Quick_Sort2()
+            //{
+            //    int[] array = { 12, 11, 13, 5, 6 };
+            //    int[] result = { 5, 6, 11, 12, 13 };
 
-            Quick_Sort sort = new Quick_Sort();
-                sort.Quicksort(array, 0, array.Length - 1);
-                Assert.Equal(result, sort.PrintArray(array));
+            //Quick_Sort sort = new Quick_Sort();
+            //    sort.Quicksort(array, 0, array.Length - 1);
+            //    Assert.Equal(result, sort.PrintArray(array));
 
-            }
-            [Fact]
-            public void Quick_Sort3()
-            {
-                int[] array = { 20, 18, 12, 8, 5, -2 };
-                int[] result = { -2, 5, 8, 12, 18, 20 };
+            //}
+            //[Fact]
+            //public void Quick_Sort3()
+            //{
+            //    int[] array = { 20, 18, 12, 8, 5, -2 };
+            //    int[] result = { -2, 5, 8, 12, 18, 20 };
 
-            Quick_Sort sort = new Quick_Sort();
-                sort.Quicksort(array, 0, array.Length - 1);
-                Assert.Equal(result, sort.PrintArray(array));
+            //Quick_Sort sort = new Quick_Sort();
+            //    sort.Quicksort(array, 0, array.Length - 1);
+            //    Assert.Equal(result, sort.PrintArray(array));
 
-            }
-            [Fact]
-            public void Quick_Sort4()
-            {
-                int[] array = { 5, 12, 7, 5, 5, 7 };
-                int[] result = { 5, 5, 5, 7, 7, 12 };
+            //}
+            //[Fact]
+            //public void Quick_Sort4()
+            //{
+            //    int[] array = { 5, 12, 7, 5, 5, 7 };
+            //    int[] result = { 5, 5, 5, 7, 7, 12 };
 
-            Quick_Sort sort = new Quick_Sort();
-                sort.Quicksort(array, 0, array.Length - 1);
+            //Quick_Sort sort = new Quick_Sort();
+            //    sort.Quicksort(array, 0, array.Length - 1);
 
-            }
-            [Fact]
-            public void Quick_Sort5()
-            {
-                int[] array = { 2, 3, 5, 7, 13, 11 };
-                int[] result = { 2, 3, 5, 7, 11, 13 };
+            //}
+            //[Fact]
+            //public void Quick_Sort5()
+            //{
+            //    int[] array = { 2, 3, 5, 7, 13, 11 };
+            //    int[] result = { 2, 3, 5, 7, 11, 13 };
 
-            Quick_Sort sort = new Quick_Sort();
-                sort.Quicksort(array, 0, array.Length - 1);
-                Assert.Equal(result, sort.PrintArray(array));
+            //Quick_Sort sort = new Quick_Sort();
+            //    sort.Quicksort(array, 0, array.Length - 1);
+            //    Assert.Equal(result, sort.PrintArray(array));
 
-            }
+            //}
 
         
     }
