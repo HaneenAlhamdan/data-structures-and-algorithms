@@ -2,13 +2,15 @@
 using data_structures_and_algorithms.Trees;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace data_structures_and_algorithms.TreeIntersection
+namespace data_structures_and_algorithms2
 {
     public class TreeIntersection
     {
-        public List<int> Tree_Intersection(BinaryTree binaryTree1, BinaryTree binaryTree2)
+        public List<int> Tree_Intersection(data_structures_and_algorithms.Trees.BinaryTree binaryTree1, BinaryTree binaryTree2)
         {
             if (binaryTree1.Root == null || binaryTree2.Root == null) throw new Exception("Tree is empty"); ;
 
