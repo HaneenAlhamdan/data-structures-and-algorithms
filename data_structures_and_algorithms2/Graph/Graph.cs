@@ -131,7 +131,7 @@ namespace data_structures_and_algorithms2
     public class Node
     {
         public readonly string Value;
-        // <Vertex, Weight>
+        
         public readonly Dictionary<string, int> Neighbors;
 
         public Node(string value)
