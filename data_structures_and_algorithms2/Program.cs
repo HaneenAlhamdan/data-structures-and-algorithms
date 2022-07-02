@@ -8,7 +8,7 @@ namespace data_structures_and_algorithms2
     {
         static void Main(string[] args)
         {
-            
+
 
             BinaryTree tree1 = new BinaryTree();
             tree1.Root = new NodeTree(1);
@@ -56,6 +56,17 @@ namespace data_structures_and_algorithms2
             graph.AddEdge("Naboo", "Narnia", 250);
 
             Console.WriteLine("Result is " + graph.BusinessTrip(graph, new string[] { "Arendelle", "Monstroplolis", "Naboo" }));
+
+            //////////////////////////////////////////////////////////////////
+
+
         }
     }
+
+
+
+
 }
+    
+
+
