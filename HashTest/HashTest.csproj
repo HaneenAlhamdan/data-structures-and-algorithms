@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestLink\TestLink.csproj" />
+    <ProjectReference Include="..\data-structures-and-algorithms\data-structures-and-algorithms.csproj" />
   </ItemGroup>
 
 </Project>
