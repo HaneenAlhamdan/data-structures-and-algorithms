@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\data-structures-and-algorithms\data-structures-and-algorithms.csproj" />
+    <ProjectReference Include="..\data_structures_and_algorithms2\data_structures_and_algorithms2.csproj" />
   </ItemGroup>
 
 </Project>

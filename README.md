@@ -22,6 +22,8 @@
 ### [MergeSort](./data-structures-and-algorithms/Merge-Sort/MergSort.md)
 ### [Graph](./data_structures_and_algorithms2/Graph/)
 ### [TreeIntersections](./data_structures_and_algorithms2/TreeIntersections.md)
+### [Graph-breadth-first](./data_structures_and_algorithms2/Graph/Graph-breadth-first.md)
+### [Graph-business-trip](./data_structures_and_algorithms2/Graph/Graph-business-trip.md)
 
 
 
