@@ -5,59 +5,30 @@ using System.Text;
 
 namespace data_structures_and_algorithms.HashLeftJoin
 {
-    public class HashLeftJoin : Hashtable
+    public class hashLeftJoin 
     {
 
-        public HashLeftJoin(int size) : base(size)
-        { }
-
-        public static List<string[]> LEFTJOINs(Hashtable left, Hashtable right)
+        public List<string> LeftJoin(Hashtable hashtable1, Hashtable hashtable2)
         {
-            if ((left == null && right == null) || (left == null)) { return null; }
-
-            if (right == null)
+            if (hashtable1.size == 0 || hashtable2.size == 0)
             {
-                List<string[]> leftList = new List<string[]>();
-                for (int i = 0; i < left.buckets.Length; i++)
-                {
-                    HashNode temp = left.buckets[i];
-                    while (temp != null)
-                    {
-                        leftList.Add(new string[] { $"{temp.Key}", $"{temp.Value}" });
-                        temp = temp.Next;
-                    }
-                }
-                return leftList;
+                throw new Exception("Hashtable is empty");
             }
+            List<string> list = new List<string>();
 
-            List<string[]> arrayList = new List<string[]>();
-            for (int i = 0; i < left.buckets.Length; i++)
+            List<string> hashtable1keys = hashtable1.Keys();
+            foreach (var key in hashtable1keys)
             {
-                HashNode temp = left.buckets[i];
-                while (temp != null)
+                if (hashtable2.Contains(key))
                 {
-                    arrayList.Add(new string[] { $"{temp.Key}", $"{temp.Value}", $"{right.Get($"{temp.Key}")}" });
-                    temp = temp.Next;
+                    list.Add("[" + key + ":" + hashtable1.Get(key).value + "," + hashtable2.Get(key).value + "]");
+                }
+                else
+                {
+                    list.Add("[" + key + ":" + hashtable1.Get(key).value + "," + "null" + "]");
                 }
             }
-
-            return arrayList;
-        }
-
-        public void PrintList(List<string[]> list)
-        {
-            if (list == null) { Console.WriteLine("List is empty!"); }
-            foreach (var array in list)
-            {
-                Console.Write("[");
-                for (int i = 0; i < array.Length; i++)
-                {
-                    if (array[i] == null) { Console.Write("NULL"); }
-                    Console.Write(array[i]);
-                    if (i < array.Length - 1) { Console.Write(", "); }
-                }
-                Console.Write("] \n");
-            }
+            return list;
         }
 
     }
