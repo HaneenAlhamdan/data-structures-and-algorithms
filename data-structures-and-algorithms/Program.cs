@@ -13,9 +13,7 @@ using data_structures_and_algorithms.QuickSort;
 using data_structures_and_algorithms.HashTable;
 using data_structures_and_algorithms.HashMap;
 using data_structures_and_algorithms.HashLeftJoin;
-//using data_structures_and_algorithms.TreeIntersection;
-//using data_structures_and_algorithms.Graph;
-using Microsoft.Azure.Management.ResourceManager.Fluent.Core.DAG;
+
 
 namespace data_structures_and_algorithms
 {
@@ -283,6 +281,30 @@ namespace data_structures_and_algorithms
             /////////////////////////////////////////////////////////////
 
             Console.WriteLine();
+
+            Hashtable hashtable1 = new Hashtable(5);
+            hashtable1.Set("fond", "enamored");
+            hashtable1.Set("wrath", "anger");
+            hashtable1.Set("diligent", "employed");
+            hashtable1.Set("outift", "garb");
+            hashtable1.Set("guide", "usher");
+
+            Hashtable hashtable2 = new Hashtable(5);
+            hashtable2.Set("fond", "averse");
+            hashtable2.Set("wrath", "delight");
+            hashtable2.Set("diligent", "idle");
+            hashtable2.Set("guide", "follow");
+            hashtable2.Set("flow", "jam");
+
+
+
+            hashLeftJoin leftJoin = new hashLeftJoin();
+            List<string> keys = new List<string>();
+            keys = leftJoin.LeftJoin(hashtable1, hashtable2);
+            foreach (var item in keys)
+            {
+                Console.WriteLine(item);
+            }
 
 
 
