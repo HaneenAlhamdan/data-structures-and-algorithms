@@ -13,9 +13,7 @@ using data_structures_and_algorithms.QuickSort;
 using data_structures_and_algorithms.HashTable;
 using data_structures_and_algorithms.HashMap;
 using data_structures_and_algorithms.HashLeftJoin;
-using Hashtable = data_structures_and_algorithms.HashTable.Hashtable;
-//using data_structures_and_algorithms.TreeIntersection;
-//using data_structures_and_algorithms.Graph;
+
 
 namespace data_structures_and_algorithms
 {
@@ -307,6 +305,11 @@ namespace data_structures_and_algorithms
             {
                 Console.WriteLine(item);
             }
+
+
+
+
+
 
 
 
