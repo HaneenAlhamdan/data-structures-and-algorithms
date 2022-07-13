@@ -1,6 +1,7 @@
 ﻿using data_structures_and_algorithms.Trees;
 using System;
 using System.Collections.Generic;
+using data_structures_and_algorithms2.Graph;
 
 namespace data_structures_and_algorithms2
 {
@@ -37,29 +38,42 @@ namespace data_structures_and_algorithms2
 
             Console.WriteLine("\n");
 
-            Graph graph = new Graph();
+          
+            Graphs graph = new Graphs();
+
+            Node Pandora = new Node("Pandora");
+            Node Arendelle = new Node("Arendelle");
+            Node Metroville = new Node("Metroville");
+            Node Monstroplolis = new Node("Monstroplolis");
+            Node Narnia = new Node("Narnia");
+            Node Naboo = new Node("Naboo");
+        
+
             graph.AddNode("Pandora");
             graph.AddNode("Arendelle");
             graph.AddNode("Metroville");
             graph.AddNode("Monstroplolis");
             graph.AddNode("Narnia");
             graph.AddNode("Naboo");
+              
 
-            graph.AddEdge("Pandora", "Arendelle", 150);
-            graph.AddEdge("Pandora", "Metroville", 82);
-            graph.AddEdge("Arendelle", "Monstroplolis", 42);
-            graph.AddEdge("Arendelle", "Metroville", 99);
-            graph.AddEdge("Metroville", "Naboo", 26);
-            graph.AddEdge("Metroville", "Narnia", 37);
-            graph.AddEdge("Monstroplolis", "Naboo", 73);
-            graph.AddEdge("Monstroplolis", "Metroville", 105);
-            graph.AddEdge("Naboo", "Narnia", 250);
+            graph.AddEdge(Pandora, Arendelle, 150);
+            graph.AddEdge(Pandora, Monstroplolis, 99);
+            graph.AddEdge(Arendelle, Metroville, 82);
+            graph.AddEdge(Arendelle, Monstroplolis, 105);
+            graph.AddEdge(Monstroplolis, Naboo, 26);
+            graph.AddEdge(Monstroplolis, Narnia, 13);
 
-            Console.WriteLine("Result is " + graph.BusinessTrip(graph, new string[] { "Arendelle", "Monstroplolis", "Naboo" }));
-
-            //////////////////////////////////////////////////////////////////
+         
 
 
+            List<Node> depthFirst = graph.DepthFirst(graph);
+            Console.Write("Depth first graph: at root Pandora: ");
+            foreach (Node node in depthFirst)
+            {
+                Console.Write($" {node.Value} ");
+            }
+            Console.WriteLine();
         }
     }
 
